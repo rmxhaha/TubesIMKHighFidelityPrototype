@@ -40,16 +40,8 @@
             <li><a href="#">Messages</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bimo<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Paus Hijau India Anonymous</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </li>
+            <li><a href = "#">register</a></li>
+			<li><a href = "#">login</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -58,19 +50,25 @@
       <div class="row">
         <div class="col-xs-12 text-center">
           <div style="padding-top : 240px">
-          <h1>Synergy</h1>
-		  <input type="text" name="search" placeholder="Search..">
-		  
-		  
-		  <form action="">
-			username: <input type="text" name="fname"><br>
-			password: <input type="text" name="lname"><br>
-			<input type="submit" value="log in">
-			<input type = "submit" value = "register">
-		</form>
+          <h1>Synergy</h1><select>
+		  <option value="kategori">Kategori</option>
+		  <option value="namakomunitas">Nama Komunitas</option>
+		  <option value="namatokoh"> Nama Tokoh</option>
+		  <option value="diskusi">Diskusi</option>
+		  <option value="lainnya">Lainnya</option>
+		</select>
+		  <input type="text" name="search" placeholder="Telusuri mengenai..">
           </div>
         </div>
       </div>
+	  <div style = "margin-left: 50%">
+		<button type = "button">dari tanggal.. </button>
+		<button type = "button"> sampai tanggal.. </button>
+	  </div>
+	  <div style = "margin-left: 50%">
+	  <button type = "button"> cari </button>
+	  <button type = "button"> random </button>
+	  </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

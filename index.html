@@ -49,31 +49,46 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 text-center">
-          <div style="padding-top : 240px">
-          <h1>Synergy</h1><select>
-		  <option value="kategori">Kategori</option>
-		  <option value="namakomunitas">Nama Komunitas</option>
-		  <option value="namatokoh"> Nama Tokoh</option>
-		  <option value="diskusi">Diskusi</option>
-		  <option value="lainnya">Lainnya</option>
-		</select>
-		  <input type="text" name="search" placeholder="Telusuri mengenai..">
+          <div style="padding-top : 9em">
+            <h1 style="font-size:9em; font-family:'Segoe UI'">Synergy</h1>
+			<br>
+			<form class="form-group navbar-form navbar-center">
+
+
+				  <select class="form-control" id=selectBox onclick="changeEvt()">
+				  <option value="namakomunitas">Komunitas</option>
+				  <option value="namatokoh">Anggota</option>
+				  <option value="diskusi">Diskusi</option>
+
+				  <option value="lainnya">Events</option>
+				</select>
+				<input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px">
+				<div class="tanggal">
+					<br>
+					<input type=date class=form-control />
+					<input type=date class=form-control />
+				</div>
+				<br><br>
+				<button class="btn btn-primary"> Cari </button>
+				<button class="btn btn-default"> Random </button>
+			</form>
           </div>
         </div>
       </div>
-	  <div style = "margin-left: 50%">
-		<button type = "button">dari tanggal.. </button>
-		<button type = "button"> sampai tanggal.. </button>
-	  </div>
-	  <div style = "margin-left: 50%">
-	  <button type = "button"> cari </button>
-	  <button type = "button"> random </button>
 	  </div>
     </div>
 
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components\jquery\dist\jquery.js"></script>
+				  <script>
+				  function changeEvt(){
+					    var selectBox = document.getElementById("selectBox");
+						var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+						if( selectedValue == "lainya" )
+							$(".tanggal").removeClass("hidden");
+						console.log(selectedValue);
+				   }
+				  </script>    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

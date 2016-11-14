@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Welcome!</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,16 +41,8 @@
             <li><a href="#">Messages</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bimo<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Paus Hijau India Anonymous</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </li>
+            <li><a href = "register.html">register</a></li>
+			<li><a href = "login.html">login</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -58,55 +50,47 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 text-center">
-          <div style="padding-top : 240px">
-          <h1>Synergy</h1>
-          <form class="navbar-form navbar-left" style="float:none!important" action="search_result.html">
-            <div id="up">
-              <div class="form-group" >
-                <select class="form-control">
-                  <option id="search-option">Community</option>
-                  <option id="search-option">Events</option>
-                  <option id="search-option">Member</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" id="serch">
+          <div style="padding-top : 9em">
+            <h1 style="font-size:9em; font-family:'Segoe UI'">Synergy</h1>
+			<br>
+			<form class="form-group navbar-form navbar-center">
 
-                <style>
-                  .navbar-form .form-control .special{
-                    width: 90px;
-                    display: none;
-                  }
-                </style>
 
-                <input type="text" class="form-control special" placeholder="Mulai dari" style="display:none">
-                <input type="text" class="form-control special" placeholder="Hingga sampai" style="display:none">
-              </div>
-            </div>
-            <div id="down">
-              <button type="submit" class="btn btn-default">Search</button>
-              <button type="submit" class="btn btn-default">Random</button>
-            </div>
-          </form>
+				  <select class="form-control" id=selectBox onclick="changeEvt()">
+				  <option value="namakomunitas">Komunitas</option>
+				  <option value="namatokoh">Anggota</option>
+				  <option value="diskusi">Diskusi</option>
+
+				  <option value="lainnya">Events</option>
+				</select>
+				<input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px">
+				<div class="tanggal">
+					<br>
+					<input type=date class=form-control />
+					<input type=date class=form-control />
+				</div>
+				<br><br>
+				<a href="profile_group.html" class="btn btn-primary"> Cari </a>
+				<button class="btn btn-default"> Random </button>
+			</form>
           </div>
         </div>
       </div>
+	  </div>
     </div>
 
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      $('.form-control option').on('click', function(){
-        
-        if($(this).text() != 'Events'){
-          $('.special').css('display','none');
-        }
-        else{
-          $('.special').css('display','inline-block');
-        }
-      });
-    </script>
+    <script src="bower_components\jquery\dist\jquery.js"></script>
+				  <script>
+				  function changeEvt(){
+					    var selectBox = document.getElementById("selectBox");
+						var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+						if( selectedValue == "lainya" )
+							$(".tanggal").removeClass("hidden");
+						console.log(selectedValue);
+				   }
+				  </script>    <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>

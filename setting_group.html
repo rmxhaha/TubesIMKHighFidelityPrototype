@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="our.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Synergy</a>
+          <a class="navbar-brand" href="index.html">Synergy</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,64 +56,67 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-6">
-          <h1>Komunitas Komputer Bandung Wiki</h1>
-          <hr>
-        </div>
-        <div class="col-xs-6" style="padding-top : 15px; text-align: right;">
+		<div class="row">
+			<div class="col-xs-6">
+			<h1>Komunitas Komputer Bandung : Settings</h1>
+			</div>
+			<div class="col-xs-6" style="padding-top : 15px; text-align: right;">
 				<a href="profile_group.html" class="btn btn-primary">Profil</a>
 				<a href="group_members.html" class="btn btn-primary">Members</a>
 				<a href="wiki.html" class="btn btn-primary">Wiki</a>
 				<button class="btn btn-primary">Gallery</button>
 				<a href="setting_group.html" class="btn btn-primary">Settings</a>
 			</div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Description</div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim. Quisque dapibus consequat erat, quis congue massa. Pellentesque quis porta dolor. Nam efficitur tempor nisi, vulputate blandit nunc sollicitudin non. Integer rutrum lorem fringilla gravida rhoncus. Aliquam ultrices justo a congue fermentum. Etiam libero lorem, mollis a augue vel, lacinia vestibulum velit. 
-</div>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Overview</div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim. Quisque dapibus consequat erat, quis congue massa. Pellentesque quis porta dolor. Nam efficitur tempor nisi, vulputate blandit nunc sollicitudin non. Integer rutrum lorem fringilla gravida rhoncus. Aliquam ultrices justo a congue fermentum. Etiam libero lorem, mollis a augue vel, lacinia vestibulum velit. 
-</div>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Links</div>
-            <div class="panel-body">
-				<div class=row>
-					<div class=col-xs-3>
-				<a href="#">Lorem ipsum lalala</a>
-				<a href="#">Lorem ipsum lalala</a>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" style="margin-top:15px;">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						Group privacy
 					</div>
-					<div class=col-xs-3>
-				<a href="#">Lorem ipsum lalala</a>
-				<a href="#">Lorem ipsum lalala</a>
+					<div style="margin-left:15px;">
+						<h4>Apakah harus dengan persetujuan admin untuk bergabung?</h4>
+						<div id="poll" style="margin-bottom:20px">
+							<form>
+							<input type="radio" name="vote" value="0">
+							Ya <br>
+							<input type="radio" name="vote" value="1">
+							Tidak
+							</form>
+						</div>
 					</div>
-					<div class=col-xs-3>
-				<a href="#">Lorem ipsum lalala</a>
-				<a href="#">Lorem ipsum lalala</a>
+					<div style="margin-left:15px;">
+						<h4>Sembunyikan tampilan group untuk selain anggota?</h4>
+						<div id="poll" style="margin-bottom:20px">
+							<form>
+							<input type="radio" name="vote" value="0">
+							Ya <br>
+							<input type="radio" name="vote" value="1">
+							Tidak
+							</form>
+						</div>
 					</div>
 				</div>
-          </div>
-		  </div>
-		  </div>
-        <div class="col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Popular Page</div>
-            <div class="panel-body"><h3>Kira Kira</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim. Quisque dapibus consequat erat, quis congue massa. Pellentesque quis porta dolor. Nam efficitur tempor nisi, vulputate blandit nunc sollicitudin non. Integer rutrum lorem fringilla gravida rhoncus. Aliquam ultrices justo a congue fermentum. Etiam libero lorem, mollis a augue vel, lacinia vestibulum velit. 
-</div>
-          </div>
-        </div>
-      </div>
+			<a href="#" class="btn btn-primary">Simpan</a>
+			</div>
+			<div class="col-xs-6" style="margin-top:15px;">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						Group 
+					</div>
+					<div style="margin-left:15px; margin-top:15px; margin-bottom:15px;" >
+						<a href="#" class="btn btn-primary" onclick="myFunction()">Hapus Group</a>
+					</div>
+		</div>
     </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components\jquery\dist\jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+		function myFunction() {
+			alert("Anda yakin?");
+		}
+	</script>
   </body>
 </html>

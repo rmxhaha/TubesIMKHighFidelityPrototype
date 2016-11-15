@@ -59,10 +59,13 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<h1>Komunitas Komputer Bandung</h1>
+				<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search members..." id="searchform"></div>
+				<button type="submit" class="btn btn-primary" onclick="searchMembers()">Search</button>
 			</div>
 			<div class="col-xs-6 " style="padding-top : 15px; text-align: right;">
 				<a href="profile_group.html" class="btn btn-primary">Profil</a>
-				<a href="profile_group.html" class="btn btn-primary">Members</a>
+				<a href="group_members.html" class="btn btn-primary">Members</a>
 				<a href="wiki.html" class="btn btn-primary">Wiki</a>
 				<button class="btn btn-primary">Gallery</button>
 				<button class="btn btn-primary">Settings</button>
@@ -70,241 +73,235 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-6">
-				<div style="padding-top : 25px;">Members : 215</div>
+				<div style="padding-top : 25px;">
+				Members : 125
+				</div>
 			</div>
 			<div class="col-xs-6">
 				<div style="padding-top : 25px; text-align: right;">
 					<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-					User online : 16
+					User online : 12
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-primary">
+		<div class="panel panel-primary" >
 		<div class="tab-pane active" id="test" style="height:400px;overflow-y:scroll;overflow-x: hidden;">
-			<div class="row" style="padding-top : 20px;">
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user1">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #1
+						予理子
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user2">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #2
+						Johnny Wells
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user3">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #3
+						Dexter Morgan
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user4">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style=""></i>
-						User #4
+						Homer Ruiz 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user5">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #5
+						Hector Dawson
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user6">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #6
+						Michelle Copeland 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-			</div>
-			<div class="row" style="padding-top : 20px;">
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user7">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #7
+						Lillian Figueroa 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user8">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #8
+						 Hazel Mullins 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user9">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #9
+						Bryan Wright 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user10">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #10
+						Alberta George
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user11">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #11
+						Sophie Harmon 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user12">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #12
+						Javier Cobb 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-			</div>
-			<div class="row" style="padding-top : 20px;">
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user13">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style=""></i>
-						User #7
+						Herman Jensen 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user14">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #8
+						Vernon Lloyd 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user15">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #9
+						Tami Steele 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user16">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #10
+						Randall Becker
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user17">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style=""></i>
-						User #11
+						Kristine Moody
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user18">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="=color: lime;"></i>
-						User #12
+						Katrina Burns
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-			</div>
-			<div class="row" style="padding-top : 20px;">
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user19">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #7
+						Regina Robinson 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user20">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #8
+						Henry Bridges 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user21">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #9
+						May Powers
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user22">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #10
+						Minnie Rogers
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user23">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
-						User #11
+						Shelly Cannon
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user24">
 					<div class="row">
 						<i class="glyphicon glyphicon-user " style="="></i>
-						User #12
+						Inez Warner 
 					</div>
 					<div class="row">
 						<img src="gambar.jpg" width=60%/>
 					</div>
 				</div>
-			</div>
 		</div>
 		</div>
     </div>
@@ -313,5 +310,24 @@
     <script src="bower_components\jquery\dist\jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+		function searchMembers() {
+			var user = "user";
+			var i = 2;
+			var userid;
+			var search = document.getElementById("searchform").value.toLowerCase();
+			var username;
+			for (i = 1; i <= 24; i++) { 
+				userid = user + i;
+				username = document.getElementById(userid).innerHTML.toLowerCase();
+				if (username.indexOf(search)<0) {
+					document.getElementById(userid).style.display = "none";
+				}
+				else {
+					document.getElementById(userid).style.display = "block";
+				}
+			}
+		}
+    </script>
   </body>
 </html>

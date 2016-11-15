@@ -58,13 +58,13 @@
     <div class="container">
 		<div class="row">
 			<div class="col-xs-6">
-			<h1>Komunitas Komputer Bandung : Settings</h1>
+              <h3 style=margin-bottom:-0.5em>Pengaturan</h3>
+              <h1>Komunitas Komputer Bandung</h1>
 			</div>
 			<div class="col-xs-6" style="padding-top : 15px; text-align: right;">
 				<a href="profile_group.html" class="btn btn-primary">Profil</a>
 				<a href="group_members.html" class="btn btn-primary">Members</a>
 				<a href="wiki.html" class="btn btn-primary">Wiki</a>
-				<a href="gallery.html" class="btn btn-primary">Gallery</a>
 				<a href="setting_group.html" class="btn btn-primary">Settings</a>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 						<h4>Apakah harus dengan persetujuan admin untuk bergabung?</h4>
 						<div id="poll" style="margin-bottom:20px">
 							<form>
-							<input type="radio" name="vote" value="0">
+							<input type="radio" name="vote" value="0"  checked>
 							Ya <br>
 							<input type="radio" name="vote" value="1">
 							Tidak
@@ -89,7 +89,7 @@
 						<h4>Sembunyikan tampilan group untuk selain anggota?</h4>
 						<div id="poll" style="margin-bottom:20px">
 							<form>
-							<input type="radio" name="vote" value="0">
+							<input type="radio" name="vote" value="0" checked>
 							Ya <br>
 							<input type="radio" name="vote" value="1">
 							Tidak
@@ -104,13 +104,17 @@
 					<div class="panel-heading">
 						Group 
 					</div>
-					<div style="margin-left:15px; margin-top:15px; margin-bottom:15px;" >
-						Menghapus group membutuhkan waktu 3 hari. Anda dapat membatalkan penghapusan sampai 1 hari sebelum group terhapus. <br>
-					</div>
-					<div style="margin-left:15px;margin-bottom:15px;" >
-						<a href="#" class="btn btn-primary" onclick="myFunction()">Hapus Group</a>
-					</div>
-		</div>
+                    <div class=panel-body>
+                      <div style="margin-left:5px; margin-top:5px; margin-bottom:5px;" >
+                          Menghapus group membutuhkan waktu 3 hari. Anda dapat membatalkan penghapusan sampai 1 hari sebelum group terhapus. <br>
+                      </div>
+                      <div style="margin-left:5px;margin-bottom:5px;" >
+                          <a href="#" class="btn btn-danger" onclick="myFunction()">Hapus Group</a>
+                      </div>
+                  </div>
+                </div>
+            </div>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components\jquery\dist\jquery.js"></script>

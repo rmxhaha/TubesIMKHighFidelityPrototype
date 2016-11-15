@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Group Komputer Bandung</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="our.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Synergy</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Communities</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bimo<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Paus Hijau India Anonymous</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+		<div class="row">
+			<div class="col-xs-6">
+				<h1>Komunitas Komputer Bandung</h1>
+				<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search members..." id="searchform"></div>
+				<button type="submit" class="btn btn-primary" onclick="searchMembers()">Search</button>
+			</div>
+			<div class="col-xs-6 " style="padding-top : 15px; text-align: right;">
+				<a href="profile_group.html" class="btn btn-primary">Profil</a>
+				<a href="group_members.html" class="btn btn-primary">Members</a>
+				<a href="wiki.html" class="btn btn-primary">Wiki</a>
+				<button class="btn btn-primary">Gallery</button>
+				<button class="btn btn-primary">Settings</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div style="padding-top : 10px;">
+				Members : 125
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div style="padding-top : 10px; text-align: right;">
+					<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+					User online : 12
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-primary" >
+		<div class="tab-pane active" id="test" style="height:380px;overflow-y:scroll;overflow-x: hidden;">
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user1">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						予理子
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user2">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Johnny Wells
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user3">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Dexter Morgan
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user4">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style=""></i>
+						Homer Ruiz 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user5">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Hector Dawson
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user6">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Michelle Copeland 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user7">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Lillian Figueroa 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user8">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						 Hazel Mullins 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user9">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Bryan Wright 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user10">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Alberta George
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user11">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Sophie Harmon 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user12">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Javier Cobb 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user13">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style=""></i>
+						Herman Jensen 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user14">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Vernon Lloyd 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user15">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Tami Steele 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user16">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Randall Becker
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user17">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style=""></i>
+						Kristine Moody
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user18">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="=color: lime;"></i>
+						Katrina Burns
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user19">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Regina Robinson 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user20">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Henry Bridges 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user21">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						May Powers
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user22">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Minnie Rogers
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user23">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+						Shelly Cannon
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+				<div class="col-md-2 text-center" style="padding-top : 20px;" id="user24">
+					<div class="row">
+						<i class="glyphicon glyphicon-user " style="="></i>
+						Inez Warner 
+					</div>
+					<div class="row">
+						<img src="gambar.jpg" width=60%/>
+					</div>
+				</div>
+		</div>
+		</div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bower_components\jquery\dist\jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+		function searchMembers() {
+			var user = "user";
+			var i = 2;
+			var userid;
+			var search = document.getElementById("searchform").value.toLowerCase();
+			var username;
+			for (i = 1; i <= 24; i++) { 
+				userid = user + i;
+				username = document.getElementById(userid).innerHTML.toLowerCase();
+				if (username.indexOf(search)<0) {
+					document.getElementById(userid).style.display = "none";
+				}
+				else {
+					document.getElementById(userid).style.display = "block";
+				}
+			}
+		}
+    </script>
+  </body>
+</html>

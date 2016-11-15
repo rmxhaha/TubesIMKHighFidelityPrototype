@@ -64,13 +64,13 @@
 				  <option value="lainnya">Events</option>
 				</select>
 				<input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px">
-				<div class="tanggal">
+				<div class="tanggal hidden">
 					<br>
 					<input type=date class=form-control />
 					<input type=date class=form-control />
 				</div>
 				<br><br>
-				<a href="profile_group.html" class="btn btn-primary"> Cari </a>
+				<a href="search_result.html" class="btn btn-primary"> Cari </a>
 				<button class="btn btn-default"> Random </button>
 			</form>
           </div>
@@ -86,8 +86,10 @@
 				  function changeEvt(){
 					    var selectBox = document.getElementById("selectBox");
 						var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-						if( selectedValue == "lainya" )
+						if( selectedValue == "lainnya" )
 							$(".tanggal").removeClass("hidden");
+                        else
+							$(".tanggal").addClass("hidden");
 						console.log(selectedValue);
 				   }
 				  </script>    <script src="js/bootstrap.min.js"></script>

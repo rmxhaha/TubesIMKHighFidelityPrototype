@@ -55,7 +55,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <div class=container>
+    <div class=container style="padding-top:2em">
       <div class=col-md-6>
         <h1>Komunitas Komputer Bandung</h1>
       </div>
@@ -65,7 +65,6 @@
           <a href="profile_group.html" class="btn btn-primary">Profil</a>
           <a href="group_members.html" class="btn btn-primary">Members</a>
           <a href="wiki.html" class="btn btn-primary">Wiki</a>
-          <a href="gallery.html" class="btn btn-primary">Gallery</a>
           <a href="setting_group.html" class="btn btn-primary">Settings</a>
         </div>
       </div>
@@ -108,9 +107,10 @@
 						<a href="discussion.html" class="btn-default" role="button"><b>Jual komputer murah 2jt</b></a>
 						<hr style="margin:0">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.</p>
-						<button type="button" class="btn btn-primary">comments <span class="badge">300</span></button>
+						<a href="discussion.html" class="btn btn-primary">comments <span class="badge">300</span></a>
 					</div>
 				</div>
+                <br>
 				<div class="row">
 					<div class="col-xs-1">
 						<button type="button" class="btn btn-default btn-sm">
@@ -131,6 +131,7 @@
 						<button type="button" class="btn btn-primary">comments <span class="badge">999</span></button>
 					</div>
 				</div>
+                <br>
 				<div class="row">
 					<div class="col-xs-1">
 						<button type="button" class="btn btn-default btn-sm">
@@ -187,7 +188,17 @@
           <div class="panel panel-primary">
 				<div class="panel-heading">
                   Events
-                  <a href = "add_event.html" class="btn btn-default pull-right" style = "margin-left: 5px">Add Event</a>
+                  <form class="navbar-form navbar-right" action="#">
+                    <div class="input-group stylish-input-group">
+                        <input type="text" class="form-control"  placeholder="Search" >
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>  
+                        </span>
+                    </div>
+                    <button type="submit" class="btn btn-default">Add Event</button>
+                  </form>
                   <div class=clearfix></div>
                 </div>
 				<div class="panel-body">

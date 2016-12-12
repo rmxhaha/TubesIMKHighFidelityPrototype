@@ -7,6 +7,21 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
 
 }]);
 
+groop.controller('group-nav',function($scope,$rootScope){
+  $scope.in_group = true;
+  $scope.group_part = "asdf";
+
+  $rootScope.$on("group_view", function(group_name){
+    $scope.group_part = group_name;
+    $scope.in_group = true;
+  });
+
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.in_group = true;
+    $scope.group_part = "nothing to look here";
+  });
+});
+
 groop.config(function($routeProvider) {
      $routeProvider
          // route for the home page
@@ -18,21 +33,27 @@ groop.config(function($routeProvider) {
          // route for the about page
          .when('/search', {
              templateUrl : 'pages/main-search-result.html',
-             controller  : 'aboutController'
+             controller  : 'main-search-result'
          })
 
-         // route for the contact page
-         .when('/contact', {
-             templateUrl : 'pages/contact.html',
-             controller  : 'contactController'
-         });
+         .when('/group-profile', {
+             templateUrl : 'pages/group-profile.html',
+             controller  : 'group-profile'
+         })
+         .when('/group-event', {
+             templateUrl : 'pages/group-event.html',
+             controller  : 'group-event'
+         })
  });
 
 groop.controller('main-search',['$scope', function($scope) {
   $scope.type = "namakomunitas";
 }]);
 
-groop.controller("home-profile",["$scope",function($scope){
+groop.controller('main-search-result',function($scope){
+});
+
+groop.controller("group-profile",["$scope",function($scope){
   $scope.posts = [
     {
       upvote : 121,

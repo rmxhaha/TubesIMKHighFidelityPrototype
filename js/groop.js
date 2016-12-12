@@ -150,6 +150,90 @@ groop.controller('messages',function($scope){
   }
 });
 groop.controller('group-event',function($scope){
+  $scope.bookmark = function(comment){
+    comment.bookmarked = true;
+  }
+  $scope.revertbookmark = function(comment){
+    comment.bookmarked = false;
+  }
+  $scope.reply = function(comment,anonymous,m){
+    var msg = {
+      content : m,
+      upvote : 0,
+      bookmarked : false,
+      replies : []
+    };
+
+    if( anonymous )
+      msg['commenter'] = "Anonymous"
+    else
+      msg['commenter'] = "Bimo";
+
+    console.log(msg);
+    comment.replies.unshift(msg);
+    comment.form_reply = false;
+  }
+
+  $scope.comment = function(anonymous,m){
+    var msg = {
+      content : m,
+      upvote : 0,
+      bookmarked : false,
+      replies : []
+    };
+
+    if( anonymous )
+      msg['commenter'] = "Anonymous"
+    else
+      msg['commenter'] = "Bimo";
+
+    console.log(msg);
+    $scope.comments.unshift(msg);
+  }
+
+  $scope.comments = [
+    {
+      commenter : "Salimin",
+      content : "Gua mau ikutan nich",
+      upvote : -1,
+      bookmarked : false,
+      replies : [
+        {
+          commenter : "Johan",
+          content : "Apaan sih min bawel.",
+          upvote : 1,
+          bookmarked : false,
+          replies : [
+            {
+              commenter : "Salimin",
+              content : "Kecewa",
+              upvote : 1,
+              bookmarked : false,
+              replies : []
+            },
+
+          ]
+        },
+        {
+          commenter : "Candra",
+          content : "Apaan sih min bawel.",
+          upvote : 3,
+          bookmarked : false,
+          replies : [
+            {
+              commenter : "Salimin",
+              content : "Kecewa",
+              upvote : 1,
+              bookmarked : false,
+              replies : []
+            },
+
+          ]
+        },
+      ]
+    }
+  ];
+
 });
 groop.controller('group-discussion',function($scope){
   $scope.bookmark = function(comment){

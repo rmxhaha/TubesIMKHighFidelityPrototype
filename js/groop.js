@@ -144,7 +144,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Rakit Komputer 2jt',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
     {
       upvote : 121,
@@ -152,7 +152,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Hibah Komputer',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
     {
       upvote : 121,
@@ -160,7 +160,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Rakit Komputer 2jt',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
   ];
 }]);

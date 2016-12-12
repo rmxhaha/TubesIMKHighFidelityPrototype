@@ -1,10 +1,10 @@
 <blockquote style="padding-right:0px">
   <div class="col-xs-1">
-      <button type="button" class="btn btn-default btn-sm">
+      <button type="button" class="btn btn-default btn-sm" ng-click="comment.upvote = comment.upvote + 1;">
         <span class="glyphicon glyphicon-arrow-up"></span>
       </button>
       <h6>&nbsp;&nbsp;&nbsp;{{comment.upvote}}</h6>
-      <button type="button" class="btn btn-default btn-sm">
+      <button type="button" class="btn btn-default btn-sm" ng-click="comment.upvote = comment.upvote - 1;">
         <span class="glyphicon glyphicon-arrow-down"></span>
       </button>
   </div>

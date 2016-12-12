@@ -1,0 +1,68 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+       <div class=row>
+            <div class="col-xs-12 " style="padding-top : 15px; text-align: right;">
+          <div class="row">
+            <div class="panel panel-info" style="margin-top:25px; margin-left:10px; margin-right:15px; text-align: left;">
+                <div class="panel-heading">
+                  Event by Komunitas Komputer Bandung
+                </div>
+                <div style="margin-left:15px; margin-right:15px;">
+                <h4>Person in charge : <b>Bimo</b><br></h4>
+                <h4>Time start : <b>20-11-2016 14.00 </b>(5 days to go)<br></h4>
+                <h4>Time end : <b>20-11-2016 19.00 </b><br></h4>
+                <h4>Place : <b>Bandung ITB</b><br></h4>
+          <div class="panel panel-info" style="margin-top:9px;">
+                  <div class=panel-body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim facilisis dignissim....
+              <a href="#" role="button"><b>More details >></b></a>
+                  </div>
+          </div>
+
+                </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 ">
+          <h3>Apakah bisa datang event?</h3>
+        <div id="poll" style="margin-bottom:0px">
+          <form>
+          <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+          Ya <br>
+          <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+          Tidak
+          </form>
+          <script>
+      		function getVote(int) {
+      			document.getElementById("poll").innerHTML="<img src='img/poll.gif' style='width:150px;height:17px; margin-bottom:10px; margin-right:10px;'/>" + "Bisa (31)<br>"
+      			+ "<img src='img/poll.gif' style='width:50px;height:17px; margin-right:10px;'/>" +"Tidak bisa (9)";
+      		}
+      	</script>
+
+        </div>
+          </div>
+          </div>
+
+      <br>
+      <h4>My Comment</h4><br>
+      <textarea class=form-control ng-model=form_message></textarea>
+      <table>
+        <tr>
+          <td>
+            <div ng-click="comment(1,form_message)" class="btn btn-primary" href=#>Comment as Anonymous</div>
+          <td>
+            <div ng-click="comment(0,form_message)" class="btn btn-primary" href=#>Comment as Yourself</div>
+      </table>
+
+      <div ng-repeat="comment in comments"  ng-include="'template/discussion.html'"></div>
+
+    <div class="btn btn-primary center-block">More...</div><br><br>
+  </div>
+  </div>
+</div>

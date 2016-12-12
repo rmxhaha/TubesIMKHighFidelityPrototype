@@ -1,0 +1,55 @@
+<script type="text/ng-template" id="message-message.html">
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Messages</div>
+        <div class="panel-body">
+          <div ng-repeat="user in users">
+            <div class="row"  style="cursor: pointer;padding:5px 0px" ng-class="{ true : 'bg-info',false :''}[user.selected]" ng-click="select(user); user.selected = true">
+              <div class="col-xs-2">
+                <img src="{{ user.image }}" width=100% />
+              </div>
+              <div class="col-xs-10">
+                  <b class=chat-user-name>{{ user.name }}</b>
+                  <p>Last seen 20:20.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{ current.name }}</div>
+        <div class="panel-body">
+          <div class="pre-scrollable" style=" overflow-x:hidden; min-height:70vh" scroll-glue-bottom="glued">
+
+            <div ng-repeat="message in current.messages">
+              <div class=row>
+                <div class="col-xs-1">
+                    <img src="{{ message.image }}" width=100% />
+                </div>
+                <div class="col-xs-11">
+                  <b>{{ message.name }}</b><div class="text-xs pull-right text-muted">20:20pm</div>
+                  <br>
+                  <span class="chat-msg">
+                    {{ message.content }}
+                  </span>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <textarea class=form-control ng-model="form_message"></textarea>
+      <a class="btn btn-primary pull-right" ng-click="send()">Send</a>
+      <div class=clearfix></div>
+    </div>
+  </div>
+</div>

@@ -19,43 +19,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index_2.html">Groop</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">Communities</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Messages</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bimo<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Paus Hijau India Anonymous</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="profile_user.html">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="index.html">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+  <body ng-app="groop-app">
+    <div ng-include="'navbar-logged-in.html'"></div>
     <div class="container">
       <div class=row>
         <div class=col-md-6>
@@ -85,7 +50,7 @@
 				<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
 				Tidak
 				</form>
-				
+
 			</div>
         </div>
         </div>
@@ -109,11 +74,11 @@
 			</div>
 
 						</div>
-						
+
 				</div>
 			</div>
       </div>
-      
+
 
 
       </div>
@@ -126,7 +91,7 @@
         </div>
       </div>
       <h4>Responses to <b>Rakit Komputer Bareng - 10 Juni 2016</b><br></h4>
-      
+
           <div class="panel panel-primary">
             <div class="panel-body">
               <div class="col-xs-1">
@@ -170,7 +135,7 @@
                             <span class="glyphicon glyphicon-arrow-down"></span>
                           </button>
                       </div>
-                      <b>Katak Jingga Australia Anonymous</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.  
+                      <b>Katak Jingga Australia Anonymous</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.
                       <a href="#" class="pull-right btn btn-primary" >reply</a>
                       <div class="clearfix"></div>
                     </div>
@@ -206,7 +171,7 @@
                             <span class="glyphicon glyphicon-arrow-down"></span>
                           </button>
                       </div>
-                      <b>Katak Jingga Australia Anonymous</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.  
+                      <b>Katak Jingga Australia Anonymous</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.
                       <a href="#" class="pull-right btn btn-primary" >reply</a>
                       <div class="clearfix"></div>
                     </div>
@@ -229,19 +194,24 @@
                   </button>
               </div>
               <b>Paus Hijau India Anonymous</b><br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.
             </div>
           </div>
 				<div class="btn btn-primary center-block">More...</div><br><br>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components\jquery\dist\jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
 		function getVote(int) {
-			document.getElementById("poll").innerHTML="<img src='img/poll.gif' style='width:150px;height:17px; margin-bottom:10px; margin-right:10px;'/>" + "Bisa (31)<br>" 
+			document.getElementById("poll").innerHTML="<img src='img/poll.gif' style='width:150px;height:17px; margin-bottom:10px; margin-right:10px;'/>" + "Bisa (31)<br>"
 			+ "<img src='img/poll.gif' style='width:50px;height:17px; margin-right:10px;'/>" +"Tidak bisa (9)";
 		}
 	</script>
+    <script src="js/angular.js"></script>
+    <script>
+        angular.module('groop-app', []);
+    </script>
   </body>
 </html>

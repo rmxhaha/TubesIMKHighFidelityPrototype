@@ -44,6 +44,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/group-event.html',
              controller  : 'group-event'
          })
+         .when('/group-discussion', {
+             templateUrl : 'pages/group-discussion.html',
+             controller  : 'group-discussion'
+         })
  });
 
 groop.controller('main-search',['$scope', function($scope) {
@@ -51,6 +55,50 @@ groop.controller('main-search',['$scope', function($scope) {
 }]);
 
 groop.controller('main-search-result',function($scope){
+});
+groop.controller('group-event',function($scope){
+});
+groop.controller('group-discussion',function($scope){
+  $scope.bookmark = function(comment){
+    comment.bookmarked = true;
+  }
+  $scope.revertbookmark = function(comment){
+    comment.bookmarked = false;
+  }
+  $scope.comments = [
+    {
+      commenter : "Salimin",
+      content : "Komposisinya jelek harusnya bla bla bla",
+      upvote : -1,
+      bookmarked : false,
+      replies : [
+        {
+          commenter : "Johan",
+          content : "Apaan sih min bawel.",
+          upvote : 1,
+          bookmarked : false,
+          replies : []
+        },
+        {
+          commenter : "Candra",
+          content : "Saya terima feedback nya",
+          upvote : 3,
+          bookmarked : false,
+          replies : [
+            {
+              commenter : "Salimin",
+              content : "Sama sama.",
+              upvote : 1,
+              bookmarked : false,
+              replies : []
+            },
+
+          ]
+        },
+      ]
+    }
+  ];
+
 });
 
 groop.controller("group-profile",["$scope",function($scope){

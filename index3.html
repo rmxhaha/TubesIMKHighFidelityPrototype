@@ -22,6 +22,11 @@
     <div ng-controller="nav">
       <div ng-include="( logged_in ? 'navbar-logged-in.html' : 'navbar-not-logged-in.html')"></div>
     </div>
+
+    <div ng-controller="group-nav">
+      <div ng-include="'template/group-header.html'"></div>
+    </div>
+
     <ng-view></ng-view>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components\jquery\dist\jquery.js"></script>

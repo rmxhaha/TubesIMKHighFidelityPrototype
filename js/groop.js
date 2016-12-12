@@ -1,5 +1,10 @@
 var groop = angular.module('groop-app', ['ngRoute','luegg.directives']);
 
+groop.run(function($rootScope) {
+    $rootScope.user_admin = 1;
+    $rootScope.user_have_joined = 1;
+});
+
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
   $scope.logout = function(){
     $scope.logged_in = false;
@@ -14,12 +19,12 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
 groop.controller('group-nav',function($scope,$rootScope){
   $scope.outside_group = true;
   $scope.group_part = "asdf";
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
 
   $rootScope.$on("group_view", function(event,group_name){
     $scope.group_part = group_name;
     $scope.outside_group = false;
-    console.log(group_name);
-    $scope.apply();
   });
 
   $rootScope.$on( "$routeChangeStart", function(){
@@ -27,6 +32,8 @@ groop.controller('group-nav',function($scope,$rootScope){
       $scope.outside_group = true;
       $scope.group_part = "nothing to look here";
     }
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
   });
 
 
@@ -179,6 +186,9 @@ groop.controller('messages',function($scope){
 groop.controller('group-event',function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Event');
 
+  $scope.user_admin = 1;
+  $scope.user_have_joined = 1;
+
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
   }
@@ -267,6 +277,9 @@ groop.controller('group-event',function($scope,$rootScope){
 groop.controller('group-discussion',function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Discussion');
 
+  $scope.user_admin = 1;
+  $scope.user_have_joined = 1;
+
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
   }
@@ -346,6 +359,14 @@ groop.controller('group-discussion',function($scope,$rootScope){
 
 groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Profile');
+
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
+  });
+
   $scope.posts = [
     {
       upvote : 121,
@@ -374,14 +395,32 @@ groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootSco
   ];
 }]);
 
-groop.controller("group-wiki",function($rootScope){
+groop.controller("group-wiki",function($scope,$rootScope){
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
+  });
   $rootScope.$broadcast('group_view','Wiki');
 });
 
-groop.controller("group-settings",function($rootScope){
+groop.controller("group-settings",function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Settings');
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
+  });
 });
 
-groop.controller("group-members",function($rootScope){
+groop.controller("group-members",function($scope,$rootScope){
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
+  });
   $rootScope.$broadcast('group_view','Members');
 });

@@ -123,6 +123,5 @@
 			document.getElementById("add").innerHTML = "ADDED";
 		}
     </script>
-
   </body>
 </html>

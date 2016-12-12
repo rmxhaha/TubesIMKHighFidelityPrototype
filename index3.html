@@ -23,7 +23,7 @@
       <div ng-include="( logged_in ? 'navbar-logged-in.html' : 'navbar-not-logged-in.html')"></div>
     </div>
 
-    <div ng-controller="group-nav">
+    <div ng-controller="group-nav" ng-hide="outside_group">
       <div ng-include="'template/group-header.html'"></div>
     </div>
 

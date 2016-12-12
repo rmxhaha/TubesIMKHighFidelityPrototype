@@ -12,18 +12,24 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
 }]);
 
 groop.controller('group-nav',function($scope,$rootScope){
-  $scope.in_group = true;
+  $scope.outside_group = true;
   $scope.group_part = "asdf";
 
-  $rootScope.$on("group_view", function(group_name){
+  $rootScope.$on("group_view", function(event,group_name){
     $scope.group_part = group_name;
-    $scope.in_group = true;
+    $scope.outside_group = false;
+    console.log(group_name);
+    $scope.apply();
   });
 
   $rootScope.$on( "$routeChangeStart", function(){
-    $scope.in_group = true;
-    $scope.group_part = "nothing to look here";
+    if( !$scope.outside_group ){
+      $scope.outside_group = true;
+      $scope.group_part = "nothing to look here";
+    }
   });
+
+
 });
 
 groop.config(function($routeProvider) {
@@ -51,6 +57,18 @@ groop.config(function($routeProvider) {
          .when('/group-discussion', {
              templateUrl : 'pages/group-discussion.html',
              controller  : 'group-discussion'
+         })
+         .when('/group-wiki', {
+             templateUrl : 'pages/group-wiki.html',
+             controller  : 'group-wiki'
+         })
+         .when('/group-settings', {
+             templateUrl : 'pages/group-settings.html',
+             controller  : 'group-settings'
+         })
+         .when('/group-members', {
+             templateUrl : 'pages/group-members.html',
+             controller  : 'group-members'
          })
          .when('/user-profile', {
              templateUrl : 'pages/user-profile.html',
@@ -149,7 +167,9 @@ groop.controller('messages',function($scope){
     $scope.form_message = "";
   }
 });
-groop.controller('group-event',function($scope){
+groop.controller('group-event',function($scope,$rootScope){
+  $rootScope.$broadcast('group_view','Event');
+
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
   }
@@ -235,7 +255,9 @@ groop.controller('group-event',function($scope){
   ];
 
 });
-groop.controller('group-discussion',function($scope){
+groop.controller('group-discussion',function($scope,$rootScope){
+  $rootScope.$broadcast('group_view','Discussion');
+
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
   }
@@ -313,7 +335,8 @@ groop.controller('group-discussion',function($scope){
 
 });
 
-groop.controller("group-profile",["$scope",function($scope){
+groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootScope){
+  $rootScope.$broadcast('group_view','Profile');
   $scope.posts = [
     {
       upvote : 121,
@@ -341,3 +364,15 @@ groop.controller("group-profile",["$scope",function($scope){
     },
   ];
 }]);
+
+groop.controller("group-wiki",function($rootScope){
+  $rootScope.$broadcast('group_view','Wiki');
+});
+
+groop.controller("group-settings",function($rootScope){
+  $rootScope.$broadcast('group_view','Settings');
+});
+
+groop.controller("group-members",function($rootScope){
+  $rootScope.$broadcast('group_view','Members');
+});

@@ -48,6 +48,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/group-discussion.html',
              controller  : 'group-discussion'
          })
+         .when('/user-profile', {
+             templateUrl : 'pages/user-profile.html',
+             controller  : 'user-profile'
+         })
  });
 
 groop.controller('main-search',['$scope', function($scope) {
@@ -55,6 +59,8 @@ groop.controller('main-search',['$scope', function($scope) {
 }]);
 
 groop.controller('main-search-result',function($scope){
+});
+groop.controller('user-profile',function($scope){
 });
 groop.controller('group-event',function($scope){
 });
@@ -144,7 +150,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Rakit Komputer 2jt',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
     {
       upvote : 121,
@@ -152,7 +158,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Hibah Komputer',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
     {
       upvote : 121,
@@ -160,7 +166,7 @@ groop.controller("group-profile",["$scope",function($scope){
       title : 'Rakit Komputer 2jt',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
-      post_url : 'discussion2.html'
+      post_url : '#!/group-discussion'
     },
   ];
 }]);

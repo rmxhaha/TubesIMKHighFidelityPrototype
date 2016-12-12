@@ -4,7 +4,7 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
   $scope.logout = function(){
     $scope.logged_in = false;
   }
-  $scope.logged_in = true;
+  $scope.logged_in = false;
   $rootScope.$on('user_login', function(user){
     $scope.logged_in = true;
   });

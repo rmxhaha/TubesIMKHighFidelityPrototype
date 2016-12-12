@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div style="padding-top : 9em">
+        <h1 style="font-size:9em; font-family:'Segoe UI'">Groop</h1>
+        <br>
+        <form class="form-group navbar-form navbar-center">
+          <select class="form-control" id=selectBox ng-model="type">
+            <option value="namakomunitas" selected>Community</option>
+            <option value="namatokoh">Members</option>
+            <option value="diskusi">Discussion</option>
+            <option value="event">Events</option>
+          </select>
+          <input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px" ng-model="q">
+          <div class="tanggal" ng-hide="type != 'event'">
+            <br>
+                      Dari
+            <input type=date class=form-control />
+                      &nbsp;
+                      Sampai
+            <input type=date class=form-control />
+          </div>
+          <br><br>
+          <a href="#!/search" class="btn btn-primary"> Search </a>
+          <button class="btn btn-default"> Random </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

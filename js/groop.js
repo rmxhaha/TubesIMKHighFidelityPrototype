@@ -48,6 +48,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/group-discussion.html',
              controller  : 'group-discussion'
          })
+         .when('/user-profile', {
+             templateUrl : 'pages/user-profile.html',
+             controller  : 'user-profile'
+         })
  });
 
 groop.controller('main-search',['$scope', function($scope) {
@@ -55,6 +59,8 @@ groop.controller('main-search',['$scope', function($scope) {
 }]);
 
 groop.controller('main-search-result',function($scope){
+});
+groop.controller('user-profile',function($scope){
 });
 groop.controller('group-event',function($scope){
 });

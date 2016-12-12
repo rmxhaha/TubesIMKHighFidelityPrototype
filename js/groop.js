@@ -76,6 +76,7 @@ groop.config(function($routeProvider) {
          })
          .when('/user-login', {
              templateUrl : 'pages/user-login.html',
+             controller : 'user-login'
          })
          .when('/user-register', {
              templateUrl : 'pages/user-register.html',
@@ -98,7 +99,15 @@ groop.controller('main-search-result',function($scope){
 });
 groop.controller('user-profile',function($scope){
 });
-groop.controller('user-register',function($scope){
+groop.controller('user-register',function($scope,$rootScope){
+  $scope.login = function(){
+    $rootScope.$broadcast("user_login");
+  }
+});
+groop.controller('user-login',function($scope,$rootScope){
+  $scope.login = function(){
+    $rootScope.$broadcast("user_login");
+  }
 });
 groop.controller('user-home',function($scope){
 });

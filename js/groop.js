@@ -1,6 +1,10 @@
 var groop = angular.module('groop-app', ['ngRoute']);
 
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
+  $scope.logout = function(){
+    $scope.logged_in = false;
+  }
+  $scope.logged_in = true;
   $rootScope.$on('user_login', function(user){
     $scope.logged_in = true;
   });

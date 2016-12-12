@@ -77,6 +77,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/group-members.html',
              controller  : 'group-members'
          })
+         .when('/group-members-admin', {
+             templateUrl : 'pages/group-members-admin.html',
+             controller  : 'group-members'
+         })
          .when('/user-profile', {
              templateUrl : 'pages/user-profile.html',
              controller  : 'user-profile'

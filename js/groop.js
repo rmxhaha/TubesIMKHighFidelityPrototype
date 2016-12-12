@@ -1,4 +1,4 @@
-var groop = angular.module('groop-app', ['ngRoute']);
+var groop = angular.module('groop-app', ['ngRoute','luegg.directives']);
 
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
   $scope.logout = function(){
@@ -72,7 +72,6 @@ groop.config(function($routeProvider) {
              controller  : 'messages'
          })
  });
-
 groop.controller('main-search',['$scope', function($scope) {
   $scope.type = "namakomunitas";
 }]);
@@ -80,6 +79,75 @@ groop.controller('main-search',['$scope', function($scope) {
 groop.controller('main-search-result',function($scope){
 });
 groop.controller('user-profile',function($scope){
+});
+groop.controller('user-register',function($scope){
+});
+groop.controller('user-home',function($scope){
+});
+
+groop.controller('messages',function($scope){
+  function make_random_msgs(name,n){
+    var m = [];
+    for( var i = n; i--; ){
+      if( Math.random() < 0.5 ){
+        m.push({
+          image : "img/gambar.jpg",
+          name : name,
+          content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis."
+        })
+      }
+      else {
+        m.push({
+          image : "img/kitten.gif",
+          name : "Bimo",
+          content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis."
+        })
+      }
+    }
+    return m;
+  }
+
+  $scope.current = {
+    name : "Candra Ramsi",
+    messages : [{
+      image : "img/gambar.jpg",
+      name : "rmxhaha",
+      content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis."
+    }]
+  }
+  $scope.select = function(user){
+    if( $scope.current.o ) $scope.current.o.selected = 0;
+    $scope.current.o = user;
+    $scope.current.name = user.name;
+    $scope.current.messages = make_random_msgs(user.name,20);
+  }
+  $scope.users = [
+    {
+      name : "Candra Ramsi",
+      selected : true,
+      image : "img/gambar.jpg"
+    },
+    {
+      name : "Friska",
+      selected : false,
+      image : "img/gambar.jpg"
+    },
+    {
+      name : "Verisky",
+      selected : false,
+      image : "img/gambar.jpg"
+    }
+  ];
+  $scope.select($scope.users[0]);
+  $scope.send = function(){
+    if( $scope.form_message== "" ) return;
+    $scope.current.messages.push({
+      name : $scope.current.name,
+      image : "img/gambar.jpg",
+      content : $scope.form_message
+    });
+    $scope.form_message = "";
+  }
 });
 groop.controller('group-event',function($scope){
 });

@@ -18,7 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="groop-app">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,24 +43,21 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <div class="container">
+    <div class="container" ng-controller="groop-search">
       <div class="row">
         <div class="col-xs-12 text-center">
           <div style="padding-top : 9em">
             <h1 style="font-size:9em; font-family:'Segoe UI'">Groop</h1>
 			<br>
 			<form class="form-group navbar-form navbar-center">
-
-
-				  <select class="form-control" id=selectBox onclick="changeEvt()">
-				  <option value="namakomunitas">Community</option>
-				  <option value="namatokoh">Members</option>
-				  <option value="diskusi">Discussion</option>
-
-				  <option value="lainnya">Events</option>
+				<select class="form-control" id=selectBox ng-model="type">
+					<option value="namakomunitas" selected>Community</option>
+					<option value="namatokoh">Members</option>
+					<option value="diskusi">Discussion</option>
+					<option value="event">Events</option>
 				</select>
 				<input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px">
-				<div class="tanggal hidden">
+				<div class="tanggal" ng-hide="type != 'event'">
 					<br>
                     Dari
 					<input type=date class=form-control />
@@ -81,17 +78,14 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components\jquery\dist\jquery.js"></script>
-				  <script>
-				  function changeEvt(){
-					    var selectBox = document.getElementById("selectBox");
-						var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-						if( selectedValue == "lainnya" )
-							$(".tanggal").removeClass("hidden");
-                        else
-							$(".tanggal").addClass("hidden");
-						console.log(selectedValue);
-				   }
-				  </script>    <script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.js"></script>
+		<script>
+			angular.module('groop-app', [])
+				.controller('groop-search',['$scope', function($scope) {
+					$scope.type = "namakomunitas";
+				}]);
+		</script>
 
   </body>
 </html>

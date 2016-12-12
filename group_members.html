@@ -18,43 +18,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index_2.html">Groop</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">Communities</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Messages</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bimo<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Paus Hijau India Anonymous</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="profile_user.html">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="index.html">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+  <body ng-app="groop-app">
+    <div ng-include="'navbar-logged-in.html'"></div>
     <div class="container">
       <div class=row>
         <div class=col-md-6>
@@ -79,7 +44,7 @@
                     <span class="input-group-addon">
                         <button type="submit">
                             <span class="glyphicon glyphicon-search"></span>
-                        </button>  
+                        </button>
                     </span>
                 </div>
           </div>
@@ -133,7 +98,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user4">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style=""></i>
-                      Homer Ruiz 
+                      Homer Ruiz
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -151,7 +116,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user6">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="color: lime;"></i>
-                      Michelle Copeland 
+                      Michelle Copeland
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -160,7 +125,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user7">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="color: lime;"></i>
-                      Lillian Figueroa 
+                      Lillian Figueroa
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -169,7 +134,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user8">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                       Hazel Mullins 
+                       Hazel Mullins
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -178,7 +143,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user9">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Bryan Wright 
+                      Bryan Wright
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -196,7 +161,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user11">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="color: lime;"></i>
-                      Sophie Harmon 
+                      Sophie Harmon
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -205,7 +170,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user12">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Javier Cobb 
+                      Javier Cobb
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -214,7 +179,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user13">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style=""></i>
-                      Herman Jensen 
+                      Herman Jensen
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -223,7 +188,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user14">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Vernon Lloyd 
+                      Vernon Lloyd
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -232,7 +197,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user15">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Tami Steele 
+                      Tami Steele
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -268,7 +233,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user19">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="color: lime;"></i>
-                      Regina Robinson 
+                      Regina Robinson
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -277,7 +242,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user20">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Henry Bridges 
+                      Henry Bridges
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -313,7 +278,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -324,7 +289,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -333,7 +298,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -342,7 +307,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -351,7 +316,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -360,7 +325,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -369,7 +334,7 @@
               <div class="col-md-2 text-center" style="padding-top : 25px;" id="user24">
                   <div class="row">
                       <i class="glyphicon glyphicon-user " style="="></i>
-                      Inez Warner 
+                      Inez Warner
                   </div>
                   <div class="row">
                       <img src="img/gambar.jpg" width=50%/>
@@ -398,7 +363,7 @@
 			var userid;
 			var search = document.getElementById("searchform").value.toLowerCase();
 			var username;
-			for (i = 1; i <= 24; i++) { 
+			for (i = 1; i <= 24; i++) {
 				userid = user + i;
 				username = document.getElementById(userid).innerHTML.toLowerCase();
 				if (username.indexOf(search)<0) {
@@ -410,5 +375,7 @@
 			}
 		}
     </script>
+    <script src="js/angular.js"></script>
+    <script src="js/groop.js"></script>
   </body>
 </html>

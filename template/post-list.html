@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-xs-1">
+		<button type="button" class="btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-arrow-up"></span>
+		</button>
+		<h6>&nbsp;{{post.upvote}}</h6>
+		<button type="button" class="btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-arrow-down"></span>
+		</button>
+	</div>
+	<div class="col-xs-2">
+		<img src="{{post.poster_img}}" width=100% />
+	</div>
+	<div class="col-xs-8">
+		<a href="{{post.post_url}}" class="btn-default" role="button"><b>{{post.title}}</b></a>
+		<hr style="margin:0">
+		<p>{{post.content}}</p>
+		<a href="{{post.post_url}}" class="btn btn-primary">comments <span class="badge">{{post.comment_count}}</span></a>
+	</div>
+</div>
+<br>

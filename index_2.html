@@ -20,24 +20,21 @@
   </head>
   <body ng-app="groop-app">
     <div ng-include="'navbar-logged-in.html'"></div>
-    <div class="container">
+    <div class="container" ng-controller="main-search">
       <div class="row">
         <div class="col-xs-12 text-center">
           <div style="padding-top : 9em">
             <h1 style="font-size:9em; font-family:'Segoe UI'">Groop</h1>
 			<br>
 			<form class="form-group navbar-form navbar-center">
-
-
-				  <select class="form-control" id=selectBox onclick="changeEvt()">
-				  <option value="namakomunitas">Community</option>
-				  <option value="namatokoh">Members</option>
-				  <option value="diskusi">Discussion</option>
-
-				  <option value="lainnya">Events</option>
+				<select class="form-control" id=selectBox ng-model="type">
+					<option value="namakomunitas" selected>Community</option>
+					<option value="namatokoh">Members</option>
+					<option value="diskusi">Discussion</option>
+					<option value="event">Events</option>
 				</select>
 				<input type="text" name="search" placeholder="Telusuri mengenai.." class="form-control" style="width:300px">
-				<div class="tanggal hidden">
+				<div class="tanggal" ng-hide="type != 'event'">
 					<br>
                     Dari
 					<input type=date class=form-control />
@@ -52,26 +49,11 @@
           </div>
         </div>
       </div>
-	  </div>
+    </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/angular.js"></script>
-    <script>
-        angular.module('groop-app', []);
-    </script>
-    <script src="bower_components\jquery\dist\jquery.js"></script>
-				  <script>
-				  function changeEvt(){
-					    var selectBox = document.getElementById("selectBox");
-						var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-						if( selectedValue == "lainnya" )
-							$(".tanggal").removeClass("hidden");
-                        else
-							$(".tanggal").addClass("hidden");
-						console.log(selectedValue);
-				   }
-				  </script>    <script src="js/bootstrap.min.js"></script>
-
+    <script src="js/groop.js"></script>
   </body>
 </html>

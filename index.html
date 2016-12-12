@@ -20,7 +20,7 @@
   </head>
   <body ng-app="groop-app">
     <div ng-include="'navbar-not-logged-in.html'"></div>
-    <div class="container" ng-controller="groop-search">
+    <div class="container" ng-controller="main-search">
       <div class="row">
         <div class="col-xs-12 text-center">
           <div style="padding-top : 9em">
@@ -56,12 +56,7 @@
     <script src="bower_components\jquery\dist\jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.js"></script>
-    <script>
-        angular.module('groop-app', [])
-            .controller('groop-search',['$scope', function($scope) {
-                $scope.type = "namakomunitas";
-            }]);
-    </script>
+    <script src="js/groop.js"></script>
 
   </body>
 </html>

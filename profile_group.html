@@ -44,7 +44,7 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              Populer Post
+              Populer Discussion
               <form class="navbar-form navbar-right" action="#">
                 <div class="input-group stylish-input-group">
                     <input type="text" class="form-control"  placeholder="Search" >
@@ -58,72 +58,10 @@
               </form>
               <div class="clearfix"></div>
             </div>
-            <div class=panel-body>
-				<div class="row">
-					<div class="col-xs-1">
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-up"></span>
-						</button>
-						<h6>&nbsp;200</h6>
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-down"></span>
-						</button>
-					</div>
-					<div class="col-xs-2">
-						<img src="img/kitten.gif" width=100% />
-					</div>
-					<div class="col-xs-8">
-						<a href="discussion2.html" class="btn-default" role="button"><b>Jual komputer murah 2jt</b></a>
-						<hr style="margin:0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.</p>
-						<a href="discussion2.html" class="btn btn-primary">comments <span class="badge">300</span></a>
-					</div>
-				</div>
-                <br>
-				<div class="row">
-					<div class="col-xs-1">
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-up"></span>
-						</button>
-						<h6>&nbsp;999</h6>
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-down"></span>
-						</button>
-					</div>
-					<div class="col-xs-2">
-						<img src="img/gambar.jpg" width=100% />
-					</div>
-					<div class="col-xs-8">
-						<a href="discussion2.html" class="btn-default" role="button"><b>Hibah komputer Bandung</b></a>
-						<hr style="margin:0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.</p>
-						<button type="button" class="btn btn-primary">comments <span class="badge">999</span></button>
-					</div>
-				</div>
-                <br>
-				<div class="row">
-					<div class="col-xs-1">
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-up"></span>
-						</button>
-						<h6>&nbsp;999</h6>
-						<button type="button" class="btn btn-default btn-sm">
-						  <span class="glyphicon glyphicon-arrow-down"></span>
-						</button>
-					</div>
-					<div class="col-xs-2">
-						<img src="img/gambar.jpg" width=100% />
-					</div>
-					<div class="col-xs-8">
-						<a href="discussion2.html" class="btn-default" role="button"><b>Hibah komputer Bandung</b></a>
-						<hr style="margin:0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.</p>
-						<button type="button" class="btn btn-primary">comments <span class="badge">999</span></button>
-					</div>
-				</div>
-				<br>
-				<div class="btn btn-primary center-block">More...</div>
-			</div>
+            <div class=panel-body ng-controller="group-popular-discussion">
+              <div  ng-repeat="post in posts" ng-include="'template/post-list.html'"></div>
+      				<div class="btn btn-primary center-block">More...</div>
+      			</div>
           </div>
         </div>
 
@@ -189,8 +127,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.js"></script>
-    <script>
-        angular.module('groop-app', []);
-    </script>
+    <script src="js/angular.js"></script>
+    <script src="js/groop.js"></script>
+
   </body>
 </html>

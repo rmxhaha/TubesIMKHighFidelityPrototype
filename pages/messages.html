@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Messages</div>
+        <div class="panel-body" id=cchat>
+
+          <div class="row"  style="cursor: pointer;padding:5px 0px" id=chat-user-template>
+            <div class="col-xs-2">
+              <img src="img/gambar.jpg" width=100% />
+            </div>
+            <div class="col-xs-10">
+                <b class=chat-user-name>Candra Ramsi</b>
+                <p>Last seen 20:20.</p>
+            </div>
+          </div>
+          <script>
+            function generate_chat(n){
+              $(".temp-chat").remove();
+
+              for( var i = 20; i--;){
+                var el;
+                if( Math.random() < 0.5 ){
+                  el = $("#ca").clone(true);
+                  el.find(".chat-name").html(n);
+                }
+                else
+                  el = $("#cb").clone(true);
+
+                el.show();
+                el.addClass("temp-chat");
+                $("#carea").append(el);
+
+              }
+
+              document.getElementById("carea").scrollTop = document.getElementById("carea").scrollHeight;
+            }
+
+            function send(){
+              el = $("#cb").clone(true);
+
+              el.show();
+              el.addClass("temp-chat");
+              el.find(".chat-msg").html($("#tinput").val());
+              $("#carea").append(el);
+
+              document.getElementById("carea").scrollTop = document.getElementById("carea").scrollHeight;
+            }
+            $(document).ready(function(){
+              var n = ["Friska","Sugeng","Verisky Megajaya","Nino","Alif","Candra Ramsi"];
+              for( var i = 0; i < n.length; ++ i ){
+                var user = $( '#chat-user-template').clone();
+                var name = n[i];
+                user.addClass("tmp-chat-user");
+                user.find(".chat-user-name").html( name );
+                user.click(function(name,btn){
+                  $(".tmp-chat-user").removeClass("bg-info");
+                  btn.addClass("bg-info");
+                  generate_chat(name);
+                }.bind(null,name, user));
+                if( name == "Candra Ramsi")
+                  user.click();
+                $("#cchat").append(
+                  user
+                );
+              }
+
+
+              $( '#chat-user-template').hide();
+
+            })
+          </script>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Candra Ramsi</div>
+        <div class="panel-body">
+          <div class="pre-scrollable" style=" overflow-x:hidden; min-height:70vh" id=carea>
+            <div class=row id=ca style="display:none">
+              <div class="col-xs-1">
+                  <img src="img/gambar.jpg" width=100% />
+              </div>
+              <div class="col-xs-11">
+                <b class="chat-name">Candra Ramsi</b><div class="text-xs pull-right text-muted">20:20pm</div>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.
+                <br><br>
+              </div>
+            </div>
+
+            <div class=row id=cb style="display:none">
+              <div class="col-xs-1">
+                  <img src="img/kitten.gif" width=100% />
+              </div>
+              <div class="col-xs-11">
+                <b>Bimo</b><div class="text-xs pull-right text-muted">20:20pm</div>
+                <br>
+                <span class="chat-msg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.
+                </span>
+                <br><br>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <textarea class=form-control id=tinput></textarea>
+      <a class="btn btn-primary pull-right" href="javascript:send()">Send</a>
+      <div class=clearfix></div>
+    </div>
+  </div>
+</div>

@@ -56,6 +56,21 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/user-profile.html',
              controller  : 'user-profile'
          })
+         .when('/user-login', {
+             templateUrl : 'pages/user-login.html',
+         })
+         .when('/user-register', {
+             templateUrl : 'pages/user-register.html',
+             controller  : 'user-register'
+         })
+         .when('/user-home', {
+             templateUrl : 'pages/user-home.html',
+             controller  : 'user-home'
+         })
+         .when('/messages', {
+             templateUrl : 'pages/messages.html',
+             controller  : 'messages'
+         })
  });
 
 groop.controller('main-search',['$scope', function($scope) {

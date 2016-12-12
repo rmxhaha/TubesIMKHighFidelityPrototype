@@ -13,9 +13,23 @@
   <br>
   {{comment.content}}
   <br>
-  <div class="pull-right btn btn-primary" >reply</div>
-  <div class="pull-right btn btn-warning" style="margin-right:5px" ng-hide="comment.bookmarked" ng-click="bookmark(comment)">bookmark</div>
+  <div class="pull-right btn btn-primary" ng-hide="comment.form_reply" ng-click="comment.form_reply = true">reply</div>
   <div class="pull-right btn btn-warning" style="margin-right:5px" ng-hide="!comment.bookmarked" ng-click="revertbookmark(comment)">bookmarked</div>
+  <div class="pull-right btn btn-warning" style="margin-right:5px" ng-hide="comment.bookmarked" ng-click="bookmark(comment)">bookmark</div>
+  <div ng-hide=!comment.form_reply>
+    <br>
+    <textarea ng-model="form_message" class=form-control></textarea>
+    <table>
+      <tr>
+        <td>
+          <div class="btn btn-primary" ng-click="reply(comment,1,form_message)">Reply as Anonymous</div>
+        <td>
+          <div class="btn btn-primary" ng-click="reply(comment,0,form_message)">Reply as Yourself</div>
+        <td>
+          <div class="btn btn-danger" ng-click="comment.form_reply = false" href=#>Cancel</div>
+    </table>
+  </div>
+
   <div class="clearfix"></div>
   <br>
   <div ng-repeat="comment in comment.replies">

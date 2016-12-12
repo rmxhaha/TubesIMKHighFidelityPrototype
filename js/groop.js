@@ -65,6 +65,41 @@ groop.controller('group-discussion',function($scope){
   $scope.revertbookmark = function(comment){
     comment.bookmarked = false;
   }
+  $scope.reply = function(comment,anonymous,m){
+    var msg = {
+      content : m,
+      upvote : 0,
+      bookmarked : false,
+      replies : []
+    };
+
+    if( anonymous )
+      msg['commenter'] = "Anonymous"
+    else
+      msg['commenter'] = "Bimo";
+
+    console.log(msg);
+    comment.replies.unshift(msg);
+    comment.form_reply = false;
+  }
+
+  $scope.comment = function(anonymous,m){
+    var msg = {
+      content : m,
+      upvote : 0,
+      bookmarked : false,
+      replies : []
+    };
+
+    if( anonymous )
+      msg['commenter'] = "Anonymous"
+    else
+      msg['commenter'] = "Bimo";
+
+    console.log(msg);
+    $scope.comments.unshift(msg);
+  }
+
   $scope.comments = [
     {
       commenter : "Salimin",

@@ -155,7 +155,7 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
 
 }]);
 
-groop.controller('group-nav',function($scope,$rootScope,$routeParams){
+groop.controller('group-nav',function($scope,$rootScope,$routeParams,$location){
   $scope.outside_group = true;
   $scope.group_part = "asdf";
   $scope.group_name = "lalal";
@@ -180,6 +180,12 @@ groop.controller('group-nav',function($scope,$rootScope,$routeParams){
       $scope.group_part = "nothing to look here";
     }
   });
+
+  $scope.join = function(){
+    $scope.user_have_joined = 1;
+    $rootScope.groupInfo[ $routeParams.groupName ].have_joined = 1;
+    $location.path("/user-login");
+  }
 
 
 });

@@ -106,6 +106,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/add-event.html',
              controller  : 'add-event'
          })
+         .when('/group-create', {
+             templateUrl : 'pages/group-create.html',
+             controller  : 'group-create'
+         })
  });
  
 groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
@@ -118,7 +122,10 @@ groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
   });
   
 }]);
- 
+
+
+groop.controller('group-create',['$scope', function($scope) {
+}]);
 groop.controller('main-search',['$scope', function($scope) {
   $scope.type = "namakomunitas";
 }]);

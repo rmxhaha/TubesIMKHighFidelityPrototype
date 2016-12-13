@@ -402,26 +402,26 @@ groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootSco
   $scope.posts = [
     {
       upvote : 121,
-      poster_img : 'img/gambar.jpg',
+      poster_img : 'img/doge.png',
       title : 'Rakit Komputer 2jt',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 30,
       post_url : '#!/group-discussion'
     },
     {
-      upvote : 121,
-      poster_img : 'img/gambar.jpg',
+      upvote : 40,
+      poster_img : 'img/doge.png',
       title : 'Hibah Komputer',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 30,
+      comment_count : 50,
       post_url : '#!/group-discussion'
     },
     {
-      upvote : 121,
-      poster_img : 'img/gambar.jpg',
-      title : 'Rakit Komputer 2jt',
+      upvote : 26,
+      poster_img : 'img/pepe.jpg',
+      title : 'SLI GTX 1080',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 30,
+      comment_count : 154,
       post_url : '#!/group-discussion'
     },
   ];

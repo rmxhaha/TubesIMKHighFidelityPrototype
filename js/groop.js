@@ -386,12 +386,12 @@ groop.controller('messages',function($scope){
       image : "img/gambar.jpg"
     }
   ];
-  $scope.select($scope.users[0]);
+  $scope.select($scope.users[1]);
   $scope.send = function(){
     if( $scope.form_message== "" ) return;
     $scope.current.messages.push({
-      name : $scope.current.name,
-      image : "img/gambar.jpg",
+      name : "Bimo",
+      image : "img/kitten.gif",
       content : $scope.form_message
     });
     $scope.form_message = "";

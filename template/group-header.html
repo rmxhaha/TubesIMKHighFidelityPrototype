@@ -11,7 +11,7 @@
         <a ng-if="user_admin==true" ng-href="#!/group-members-admin/{{ group_id }}" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Members</a>
         <a ng-if="user_admin==false" ng-href="#!/group-members/{{ group_id }}" class="btn btn-primary">Members</a>
         <a href="#!/group-wiki/{{ group_id }}" class="btn btn-primary">Wiki</a>
-        <a href="#!/group-settings/{{ group_id }}" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Settings</a>
+        <a ng-if="user_admin==true" href="#!/group-settings/{{ group_id }}" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Settings</a>
       </div>
     </div>
   </div>

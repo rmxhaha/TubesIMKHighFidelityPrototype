@@ -1,9 +1,6 @@
 var groop = angular.module('groop-app', ['ngRoute','luegg.directives']);
 
 groop.run(function($rootScope, $templateCache) {
-    $rootScope.user_admin = 0;
-    $rootScope.user_have_joined = 1;
-
     $rootScope.$on('$viewContentLoaded', function() {
        $templateCache.removeAll();
     });
@@ -11,6 +8,7 @@ groop.run(function($rootScope, $templateCache) {
     $rootScope.groupInfo = [
       {
         name : "Komputer Bandung",
+        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis. Donec pulvinar facilisis mi ut dignissim. Quisque dapibus consequat erat, quis congue massa. Pellentesque quis porta dolor. Nam efficitur tempor nisi, vulputate blandit nunc sollicitudin non. Integer rutrum lorem fringilla gravida rhoncus. Aliquam ultrices justo a congue fermentum. Etiam libero lorem, mollis a augue vel, lacinia vestibulum velit. ",
         posts : [
           {
             upvote : 42,
@@ -36,11 +34,31 @@ groop.run(function($rootScope, $templateCache) {
             comment_count : 5,
             post_url : '#!/group-discussion/0/1'
           },
-        ]
+        ],
+        events : [
+          {
+            name : "Rakit Komputer Bareng - 10 Juni 2016",
+            url : "#!/group-event/0/0"
+          },
+          {
+            name : "Rakit Komputer Bareng - 12 Juni 2016",
+            url : "#!/group-event/0/0"
+          },
+          {
+            name : "Rakit Komputer Bareng - 14 Juni 2016",
+            url : "#!/group-event/0/0"
+          },
+        ],
+        is_admin : 0,
+        have_joined : 0
       },
       {
         name : "Beauty Bandung",
-        posts : []
+        description : "Beauty Product yang bisa dibeli di bandung.",
+        posts : [],
+        events : [],
+        is_admin : 1,
+        have_joined : 1
       }
     ]
 
@@ -128,7 +146,6 @@ groop.run(function($rootScope, $templateCache) {
 
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
   $scope.logout = function(){
-	  $rootScope.user_admin = 0;
     $scope.logged_in = false;
   }
   $scope.logged_in = false;
@@ -142,14 +159,19 @@ groop.controller('group-nav',function($scope,$rootScope,$routeParams){
   $scope.outside_group = true;
   $scope.group_part = "asdf";
   $scope.group_name = "lalal";
-  $scope.user_admin = $rootScope.user_admin;
-  $scope.user_have_joined =  $rootScope.user_have_joined;
+  if( $routeParams.groupName ){
+    $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+    $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+  }
 
   $rootScope.$on("group_view", function(event,group_part){
     $scope.group_part = group_part;
     $scope.outside_group = false;
     $scope.group_name = $rootScope.groupInfo[ $routeParams.groupName ].name;
     $scope.group_id = $routeParams.groupName;
+
+    $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+    $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
   });
 
   $rootScope.$on( "$routeChangeStart", function(){
@@ -157,8 +179,6 @@ groop.controller('group-nav',function($scope,$rootScope,$routeParams){
       $scope.outside_group = true;
       $scope.group_part = "nothing to look here";
     }
-    $scope.user_admin = $rootScope.user_admin;
-    $scope.user_have_joined =  $rootScope.user_have_joined;
   });
 
 
@@ -239,11 +259,12 @@ groop.config(function($routeProvider) {
 
 groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Add Event');
-  $scope.user_admin = $rootScope.user_admin;
-  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+  $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+
   $rootScope.$on( "$routeChangeStart", function(){
-    $scope.user_admin = $rootScope.user_admin;
-    $scope.user_have_joined =  $rootScope.user_have_joined;
+    $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+    $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
   });
 
 }]);
@@ -347,8 +368,13 @@ groop.controller('messages',function($scope){
 groop.controller('group-event',function($scope,$rootScope,$routeParams){
   $rootScope.$broadcast('group_view','Event');
 
-  $scope.user_admin = 1;
-  $scope.user_have_joined = 1;
+  $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+  $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+    $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+  });
 
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
@@ -397,8 +423,13 @@ groop.controller('group-event',function($scope,$rootScope,$routeParams){
 groop.controller('group-discussion',function($scope,$rootScope,$routeParams){
   $rootScope.$broadcast('group_view','Discussion');
 
-  $scope.user_admin = 1;
-  $scope.user_have_joined = 1;
+  $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+  $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.groupInfo[ $routeParams.groupName ].is_admin;
+    $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
+  });
 
   $scope.bookmark = function(comment){
     comment.bookmarked = true;
@@ -456,6 +487,8 @@ groop.controller("group-profile",["$scope","$rootScope","$routeParams",function(
   });
 
   $scope.posts = $rootScope.groupInfo[$routeParams.groupName].posts;
+  $scope.events = $rootScope.groupInfo[$routeParams.groupName].events;
+  $scope.description = $rootScope.groupInfo[$routeParams.groupName].description;
 }]);
 
 groop.controller("group-wiki",function($scope,$rootScope,$routeParams){
@@ -488,8 +521,8 @@ groop.controller("group-members",function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Members');
 });
 
-groop.controller("group-create", function($scope,$rootScope){
+groop.controller("group-create", function($scope,$rootScope,$location){
   $scope.create_group = function(){
-    $rootScope.group_admin = 1;
+    $location.path("/group-profile/1")
   };
 });

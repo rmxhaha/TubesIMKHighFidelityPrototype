@@ -261,6 +261,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/add-event.html',
              controller  : 'add-event'
          })
+         .when('/group-create', {
+             templateUrl : 'pages/group-create.html',
+             controller  : 'group-create'
+         })
  });
 
 groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
@@ -273,6 +277,10 @@ groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
     $scope.user_have_joined = $rootScope.groupInfo[ $routeParams.groupName ].have_joined;
   });
 
+}]);
+
+
+groop.controller('group-create',['$scope', function($scope) {
 }]);
 
 groop.controller('main-search',['$scope','$location', function($scope,$location) {

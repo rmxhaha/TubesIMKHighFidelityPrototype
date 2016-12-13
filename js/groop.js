@@ -18,7 +18,7 @@ groop.run(function($rootScope, $templateCache) {
             title : 'Discussion : Rakit Komputer 2jt',
             content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
             comment_count : 30,
-            post_url : '#!/group-discussion'
+            post_url : '#!/group-discussion/0/1'
           },
           {
             upvote : 150,
@@ -26,7 +26,7 @@ groop.run(function($rootScope, $templateCache) {
             title : 'Discussion : Hibah Komputer',
             content : 'Lorem ipsum auctor tempor a nec felis, consectetur adipiscing elit. In id nisi id.',
             comment_count : 30,
-            post_url : '#!/group-discussion'
+            post_url : '#!/group-discussion/0/1'
           },
           {
             upvote : 24,
@@ -34,7 +34,7 @@ groop.run(function($rootScope, $templateCache) {
             title : 'Discussion : 2x GTX 1080',
             content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
             comment_count : 5,
-            post_url : '#!/group-discussion'
+            post_url : '#!/group-discussion/0/1'
           },
         ]
       },
@@ -149,6 +149,7 @@ groop.controller('group-nav',function($scope,$rootScope,$routeParams){
     $scope.group_part = group_part;
     $scope.outside_group = false;
     $scope.group_name = $rootScope.groupInfo[ $routeParams.groupName ].name;
+    $scope.group_id = $routeParams.groupName;
   });
 
   $rootScope.$on( "$routeChangeStart", function(){

@@ -1,8 +1,129 @@
 var groop = angular.module('groop-app', ['ngRoute','luegg.directives']);
 
-groop.run(function($rootScope) {
+groop.run(function($rootScope, $templateCache) {
     $rootScope.user_admin = 0;
     $rootScope.user_have_joined = 1;
+
+    $rootScope.$on('$viewContentLoaded', function() {
+       $templateCache.removeAll();
+    });
+
+    $rootScope.groupInfo = [
+      {
+        name : "Komputer Bandung",
+        posts : [
+          {
+            upvote : 42,
+            poster_img : 'img/pepe.jpg',
+            title : 'Discussion : Rakit Komputer 2jt',
+            content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+            comment_count : 30,
+            post_url : '#!/group-discussion/0/1'
+          },
+          {
+            upvote : 150,
+            poster_img : 'img/kitten.gif',
+            title : 'Discussion : Hibah Komputer',
+            content : 'Lorem ipsum auctor tempor a nec felis, consectetur adipiscing elit. In id nisi id.',
+            comment_count : 30,
+            post_url : '#!/group-discussion/0/1'
+          },
+          {
+            upvote : 24,
+            poster_img : 'img/kitten.gif',
+            title : 'Discussion : 2x GTX 1080',
+            content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+            comment_count : 5,
+            post_url : '#!/group-discussion/0/1'
+          },
+        ]
+      },
+      {
+        name : "Beauty Bandung",
+        posts : []
+      }
+    ]
+
+    $rootScope.discussionInfo = [
+      // 0
+      [
+        {
+          commenter : "Salimin",
+          content : "Gua mau ikutan nich",
+          upvote : -1,
+          bookmarked : false,
+          replies : [
+            {
+              commenter : "Johan",
+              content : "Apaan sih min bawel.",
+              upvote : 1,
+              bookmarked : false,
+              replies : [
+                {
+                  commenter : "Salimin",
+                  content : "Kecewa",
+                  upvote : 1,
+                  bookmarked : false,
+                  replies : []
+                },
+
+              ]
+            },
+            {
+              commenter : "Candra",
+              content : "Apaan sih min bawel.",
+              upvote : 3,
+              bookmarked : false,
+              replies : [
+                {
+                  commenter : "Salimin",
+                  content : "Kecewa",
+                  upvote : 1,
+                  bookmarked : false,
+                  replies : []
+                },
+
+              ]
+            },
+          ]
+        }
+      ]
+      // 1
+      ,
+      [
+        {
+          commenter : "Salimin",
+          content : "Komposisinya jelek harusnya bla bla bla",
+          upvote : -1,
+          bookmarked : false,
+          replies : [
+            {
+              commenter : "Johan",
+              content : "Apaan sih min bawel.",
+              upvote : 1,
+              bookmarked : false,
+              replies : []
+            },
+            {
+              commenter : "Candra",
+              content : "Saya terima feedback nya",
+              upvote : 3,
+              bookmarked : false,
+              replies : [
+                {
+                  commenter : "Salimin",
+                  content : "Sama sama.",
+                  upvote : 1,
+                  bookmarked : false,
+                  replies : []
+                },
+
+              ]
+            },
+          ]
+        }
+      ]
+    ]
 });
 
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
@@ -17,15 +138,18 @@ groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
 
 }]);
 
-groop.controller('group-nav',function($scope,$rootScope){
+groop.controller('group-nav',function($scope,$rootScope,$routeParams){
   $scope.outside_group = true;
   $scope.group_part = "asdf";
+  $scope.group_name = "lalal";
   $scope.user_admin = $rootScope.user_admin;
   $scope.user_have_joined =  $rootScope.user_have_joined;
 
-  $rootScope.$on("group_view", function(event,group_name){
-    $scope.group_part = group_name;
+  $rootScope.$on("group_view", function(event,group_part){
+    $scope.group_part = group_part;
     $scope.outside_group = false;
+    $scope.group_name = $rootScope.groupInfo[ $routeParams.groupName ].name;
+    $scope.group_id = $routeParams.groupName;
   });
 
   $rootScope.$on( "$routeChangeStart", function(){
@@ -47,40 +171,42 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/main-search.html',
              controller  : 'main-search'
          })
-
-         // route for the about page
          .when('/search', {
              templateUrl : 'pages/main-search-result.html',
              controller  : 'main-search-result'
          })
 
-         .when('/group-profile', {
+         .when('/group-profile/:groupName', {
              templateUrl : 'pages/group-profile.html',
              controller  : 'group-profile'
          })
-         .when('/group-event', {
+         .when('/group-event/:groupName/:id', {
              templateUrl : 'pages/group-event.html',
              controller  : 'group-event'
          })
-         .when('/group-discussion', {
+         .when('/group-discussion/:groupName/:id', {
              templateUrl : 'pages/group-discussion.html',
              controller  : 'group-discussion'
          })
-         .when('/group-wiki', {
+         .when('/group-wiki/:groupName', {
              templateUrl : 'pages/group-wiki.html',
              controller  : 'group-wiki'
          })
-         .when('/group-settings', {
+         .when('/group-settings/:groupName', {
              templateUrl : 'pages/group-settings.html',
              controller  : 'group-settings'
          })
-         .when('/group-members', {
+         .when('/group-members/:groupName', {
              templateUrl : 'pages/group-members.html',
              controller  : 'group-members'
          })
-         .when('/group-members-admin', {
+           .when('/group-members-admin/:groupName', {
              templateUrl : 'pages/group-members-admin.html',
              controller  : 'group-members'
+         })
+         .when('/group-create/:groupName', {
+             templateUrl : 'pages/group-create.html',
+             controller  : 'group-create'
          })
          .when('/user-profile', {
              templateUrl : 'pages/user-profile.html',
@@ -146,33 +272,8 @@ groop.controller('user-login',function($scope,$rootScope){
   }
 });
 
-groop.controller('user-home',function($scope){
-	$scope.posts = [
-    {
-      upvote : 42,
-      poster_img : 'img/pepe.jpg',
-      title : 'Discussion : Rakit Komputer 2jt',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 30,
-      post_url : '#!/group-discussion'
-    },
-    {
-      upvote : 150,
-      poster_img : 'img/kitten.gif',
-      title : 'Discussion : Hibah Komputer',
-      content : 'Lorem ipsum auctor tempor a nec felis, consectetur adipiscing elit. In id nisi id.',
-      comment_count : 30,
-      post_url : '#!/group-discussion'
-    },
-    {
-      upvote : 24,
-      poster_img : 'img/kitten.gif',
-      title : 'Discussion : 2x GTX 1080',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 5,
-      post_url : '#!/group-discussion'
-    },
-  ];
+groop.controller('user-home',function($scope,$rootScope){
+	$scope.posts = $rootScope.groupInfo[0].posts;
 });
 
 groop.controller('messages',function($scope){
@@ -239,7 +340,7 @@ groop.controller('messages',function($scope){
     $scope.form_message = "";
   }
 });
-groop.controller('group-event',function($scope,$rootScope){
+groop.controller('group-event',function($scope,$rootScope,$routeParams){
   $rootScope.$broadcast('group_view','Event');
 
   $scope.user_admin = 1;
@@ -286,51 +387,10 @@ groop.controller('group-event',function($scope,$rootScope){
     $scope.comments.unshift(msg);
   }
 
-  $scope.comments = [
-    {
-      commenter : "Salimin",
-      content : "Gua mau ikutan nich",
-      upvote : -1,
-      bookmarked : false,
-      replies : [
-        {
-          commenter : "Johan",
-          content : "Apaan sih min bawel.",
-          upvote : 1,
-          bookmarked : false,
-          replies : [
-            {
-              commenter : "Salimin",
-              content : "Kecewa",
-              upvote : 1,
-              bookmarked : false,
-              replies : []
-            },
-
-          ]
-        },
-        {
-          commenter : "Candra",
-          content : "Apaan sih min bawel.",
-          upvote : 3,
-          bookmarked : false,
-          replies : [
-            {
-              commenter : "Salimin",
-              content : "Kecewa",
-              upvote : 1,
-              bookmarked : false,
-              replies : []
-            },
-
-          ]
-        },
-      ]
-    }
-  ];
+  $scope.comments = $rootScope.discussionInfo[$routeParams.id];
 
 });
-groop.controller('group-discussion',function($scope,$rootScope){
+groop.controller('group-discussion',function($scope,$rootScope,$routeParams){
   $rootScope.$broadcast('group_view','Discussion');
 
   $scope.user_admin = 1;
@@ -377,43 +437,11 @@ groop.controller('group-discussion',function($scope,$rootScope){
     $scope.comments.unshift(msg);
   }
 
-  $scope.comments = [
-    {
-      commenter : "Salimin",
-      content : "Komposisinya jelek harusnya bla bla bla",
-      upvote : -1,
-      bookmarked : false,
-      replies : [
-        {
-          commenter : "Johan",
-          content : "Apaan sih min bawel.",
-          upvote : 1,
-          bookmarked : false,
-          replies : []
-        },
-        {
-          commenter : "Candra",
-          content : "Saya terima feedback nya",
-          upvote : 3,
-          bookmarked : false,
-          replies : [
-            {
-              commenter : "Salimin",
-              content : "Sama sama.",
-              upvote : 1,
-              bookmarked : false,
-              replies : []
-            },
-
-          ]
-        },
-      ]
-    }
-  ];
+  $scope.comments = $rootScope.discussionInfo[$routeParams.id];
 
 });
 
-groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootScope){
+groop.controller("group-profile",["$scope","$rootScope","$routeParams",function($scope,$rootScope,$routeParams){
   $rootScope.$broadcast('group_view','Profile');
 
   $scope.user_admin = $rootScope.user_admin;
@@ -423,44 +451,10 @@ groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootSco
     $scope.user_have_joined =  $rootScope.user_have_joined;
   });
 
-
-  $scope.posts = [
-    {
-      upvote : 121,
-      poster_img : 'img/doge.png',
-      title : 'Rakit Komputer 2jt',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 30,
-      post_url : '#!/group-discussion'
-    },
-    {
-      upvote : 40,
-      poster_img : 'img/doge.png',
-      title : 'Hibah Komputer',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 50,
-      post_url : '#!/group-discussion'
-    },
-    {
-      upvote : 26,
-      poster_img : 'img/pepe.jpg',
-      title : 'SLI GTX 1080',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 154,
-      post_url : '#!/group-discussion'
-    },
-    {
-      upvote : 26,
-      poster_img : 'img/doge.png',
-      title : 'Rakit Komputer untuk pemula',
-      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
-      comment_count : 154,
-      post_url : '#!/group-discussion'
-    },
-  ];
+  $scope.posts = $rootScope.groupInfo[$routeParams.groupName].posts;
 }]);
 
-groop.controller("group-wiki",function($scope,$rootScope){
+groop.controller("group-wiki",function($scope,$rootScope,$routeParams){
   $scope.user_admin = $rootScope.user_admin;
   $scope.user_have_joined =  $rootScope.user_have_joined;
   $rootScope.$on( "$routeChangeStart", function(){
@@ -488,4 +482,10 @@ groop.controller("group-members",function($scope,$rootScope){
     $scope.user_have_joined =  $rootScope.user_have_joined;
   });
   $rootScope.$broadcast('group_view','Members');
+});
+
+groop.controller("group-create", function($scope,$rootScope){
+  $scope.create_group = function(){
+    $rootScope.group_admin = 1;
+  };
 });

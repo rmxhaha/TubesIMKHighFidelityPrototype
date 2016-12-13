@@ -2,22 +2,16 @@
   <div class=row>
     <div class=col-md-6>
       <h3 style="margin-bottom:-0.5em">{{ group_part }}</h3>
-      <h1>Komunitas Komputer Bandung</h1>
+      <h1>Komunitas {{ group_name }}</h1>
     </div>
 
-    <div class=col-md-6  style="padding-top : 15px;" ng-if="user_admin==true">
+    <div class=col-md-6  style="padding-top : 15px;">
       <div style="text-align: right;">
-        <a href="#!/group-profile" class="btn btn-primary">Profil</a>
-		<a href="#!/group-members-admin" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Members</a>
-        <a href="#!/group-wiki" class="btn btn-primary">Wiki</a>
-        <a href="#!/group-settings" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Settings</a>
-      </div>
-    </div>
-    <div class=col-md-6  style="padding-top : 15px;" ng-if="user_admin==false">
-      <div style="text-align: right;">
-        <a href="#!/group-profile" class="btn btn-primary">Profil</a>
-		<a href="#!/group-members" class="btn btn-primary">Members</a>
-        <a href="#!/group-wiki" class="btn btn-primary">Wiki</a>
+        <a href="#!/group-profile/{{ group_id }}" class="btn btn-primary">Profil</a>
+        <a ng-if="user_admin==true" ng-href="#!/group-members-admin/{{ group_id }}" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Members</a>
+        <a ng-if="user_admin==false" ng-href="#!/group-members/{{ group_id }}" class="btn btn-primary">Members</a>
+        <a href="#!/group-wiki/{{ group_id }}" class="btn btn-primary">Wiki</a>
+        <a href="#!/group-settings/{{ group_id }}" class="btn btn-primary"><i class="glyphicon glyphicon-cog" style="color: white;"></i>&nbsp; Settings</a>
       </div>
     </div>
   </div>

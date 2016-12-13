@@ -34,6 +34,14 @@ groop.run(function($rootScope, $templateCache) {
             comment_count : 5,
             post_url : '#!/group-discussion/0/1'
           },
+          {
+            upvote : 42,
+            poster_img : 'img/pepe.jpg',
+            title : 'Discussion : Rakit Komputer Pemula',
+            content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+            comment_count : 30,
+            post_url : '#!/group-discussion/0/1'
+          },
         ],
         events : [
           {
@@ -110,14 +118,16 @@ groop.run(function($rootScope, $templateCache) {
       ,
       [
         {
-          commenter : "Salimin",
+          commenter : "Friska",
           content : "Komposisinya jelek harusnya bla bla bla",
+          commenter_url : "#!/user-profile-2",
+          
           upvote : -1,
           bookmarked : false,
           replies : [
             {
               commenter : "Johan",
-              content : "Apaan sih min bawel.",
+              content : "Apaan sih friska bawel.",
               upvote : 1,
               bookmarked : false,
               replies : []
@@ -129,8 +139,9 @@ groop.run(function($rootScope, $templateCache) {
               bookmarked : false,
               replies : [
                 {
-                  commenter : "Salimin",
+                  commenter : "Johan",
                   content : "Sama sama.",
+                  commenter_url : "#!/user-profile-2",
                   upvote : 1,
                   bookmarked : false,
                   replies : []
@@ -241,6 +252,10 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/user-profile.html',
              controller  : 'user-profile'
          })
+         .when('/user-profile-2', {
+             templateUrl : 'pages/user-profile-friska.html',
+             controller  : 'user-profile-friska'
+         })
          .when('/user-login', {
              templateUrl : 'pages/user-login.html',
              controller : 'user-login'
@@ -299,6 +314,8 @@ groop.controller('main-search-result',function($scope){
 });
 groop.controller('user-profile',function($scope){
 });
+groop.controller('user-profile-friska',function($scope){
+});
 groop.controller('user-register',function($scope,$rootScope){
   $scope.login = function(){
     $rootScope.$broadcast("user_login");
@@ -354,12 +371,12 @@ groop.controller('messages',function($scope){
   $scope.users = [
     {
       name : "Candra Ramsi",
-      selected : true,
+      selected : false,
       image : "img/gambar.jpg"
     },
     {
       name : "Friska",
-      selected : false,
+      selected : true,
       image : "img/gambar.jpg"
     },
     {

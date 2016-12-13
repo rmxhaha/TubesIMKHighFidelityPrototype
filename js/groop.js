@@ -175,6 +175,9 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/main-search-result.html',
              controller  : 'main-search-result'
          })
+         .when('/search-not-found', {
+             templateUrl : 'pages/main-search-result-not-found.html'
+         })
 
          .when('/group-profile/:groupName', {
              templateUrl : 'pages/group-profile.html',
@@ -233,7 +236,7 @@ groop.config(function($routeProvider) {
              controller  : 'add-event'
          })
  });
- 
+
 groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
   $rootScope.$broadcast('group_view','Add Event');
   $scope.user_admin = $rootScope.user_admin;
@@ -242,11 +245,19 @@ groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
     $scope.user_admin = $rootScope.user_admin;
     $scope.user_have_joined =  $rootScope.user_have_joined;
   });
-  
+
 }]);
- 
-groop.controller('main-search',['$scope', function($scope) {
+
+groop.controller('main-search',['$scope','$location', function($scope,$location) {
   $scope.type = "namakomunitas";
+  $scope.search = function(){
+    if( $scope.searchText == "Beauty" ){
+      $location.path("/search-not-found");
+    }
+    else {
+      $location.path("/search");      
+    }
+  }
 }]);
 
 groop.controller('main-search-result',function($scope){

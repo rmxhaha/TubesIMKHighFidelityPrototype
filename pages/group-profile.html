@@ -7,7 +7,7 @@
           Populer Discussion
           <form class="navbar-form navbar-right" action="#">
             <div class="input-group stylish-input-group">
-                <input type="text" class="form-control"  placeholder="Search" >
+                <input type="text" class="form-control" ng-model="postSearchText" placeholder="Search" >
                 <span class="input-group-addon">
                     <button type="submit">
                         <span class="glyphicon glyphicon-search"></span>
@@ -19,7 +19,7 @@
           <div class="clearfix"></div>
         </div>
         <div class=panel-body>
-          <div  ng-repeat="post in posts" ng-include="'template/post-list.html'"></div>
+          <div  ng-repeat="post in posts | filter:postSearchText  | limitTo:3" ng-include="'template/post-list.html'"></div>
   				<div class="btn btn-primary center-block">More...</div>
   			</div>
       </div>

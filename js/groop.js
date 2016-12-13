@@ -118,10 +118,11 @@ groop.controller('user-register',function($scope,$rootScope){
 });
 groop.controller('user-login',function($scope,$rootScope){
   $scope.login = function(){
-	$rootScope.user_admin = 1;
-    $rootScope.$broadcast("user_login");
+//	   $rootScope.user_admin = 1;
+     $rootScope.$broadcast("user_login");
   }
 });
+
 groop.controller('user-home',function($scope){
 	$scope.posts = [
     {
@@ -399,6 +400,7 @@ groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootSco
     $scope.user_have_joined =  $rootScope.user_have_joined;
   });
 
+
   $scope.posts = [
     {
       upvote : 121,
@@ -420,6 +422,14 @@ groop.controller("group-profile",["$scope","$rootScope",function($scope,$rootSco
       upvote : 26,
       poster_img : 'img/pepe.jpg',
       title : 'SLI GTX 1080',
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+      comment_count : 154,
+      post_url : '#!/group-discussion'
+    },
+    {
+      upvote : 26,
+      poster_img : 'img/doge.png',
+      title : 'Rakit Komputer untuk pemula',
       content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
       comment_count : 154,
       post_url : '#!/group-discussion'

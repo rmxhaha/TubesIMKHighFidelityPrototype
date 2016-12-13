@@ -15,10 +15,10 @@
               <img src="img/doge.png" width=100% />
           </div>
           <div class="col-xs-8">
-              <a href="discussion2.html" class="btn-default" role="button"><h3>komputer rakitan murah 2jt</h3></a>
+              <a href="discussion2.html" class="btn-default" role="button"><h3>komputer rakitan murah pemula</h3></a>
               <hr style="margin:0">
 
-              Berikut spesifikasi komputer 2jt saya.<br><br>
+              Berikut spesifikasi komputer pemula saya.<br><br>
 
               <a href="https://pcpartpicker.com/list/VMfXJV">PCPartPicker part list</a> / <a href="https://pcpartpicker.com/list/VMfXJV/by_merchant/">Price breakdown by merchant</a>
               <table class="pcpp-part-list table table-striped">
@@ -122,9 +122,9 @@
       <table>
         <tr>
           <td>
-            <div ng-click="comment(1,form_message)" class="btn btn-primary" href=#>Comment as Anonymous</div>
+            <div ng-click="comment(1,form_message); form_message = ''" class="btn btn-primary" href=#>Comment as Anonymous</div>
           <td>
-            <div ng-click="comment(0,form_message)" class="btn btn-primary" href=#>Comment as Yourself</div>
+            <div ng-click="comment(0,form_message); form_message = ''" class="btn btn-primary" href=#>Comment as Yourself</div>
       </table>
 
       <div ng-repeat="comment in comments"  ng-include="'template/discussion.html'"></div>

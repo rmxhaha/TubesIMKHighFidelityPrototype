@@ -36,7 +36,7 @@ groop.run(function($rootScope, $templateCache) {
           },
           {
             upvote : 42,
-            poster_img : 'img/pepe.jpg',
+            poster_img : 'img/doge.png',
             title : 'Discussion : Rakit Komputer Pemula',
             content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
             comment_count : 30,
@@ -470,6 +470,7 @@ groop.controller('group-discussion',function($scope,$rootScope,$routeParams){
     comment.bookmarked = false;
   }
   $scope.reply = function(comment,anonymous,m){
+    $scope.form_message = "";
     var msg = {
       content : m,
       upvote : 0,

@@ -1,1 +1,99 @@
-Belom di buat
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+		<div class="panel panel-primary" >
+				<div class="panel-heading">
+					Groups
+				</div>
+					<div class="panel panel-info" style="margin-top:15px; margin-left:15px; margin-right:15px;">
+						<div class="panel-heading">
+							<a href="#!/group-profile" role="button" style="color:white;"><b>Komunitas Komputer Bandung</b></a>
+						</div>
+					</div>
+					<div class="panel panel-info" style="margin-left:15px; margin-right:15px;">
+						<div class="panel-heading">
+							<a href="#!/group-profile" role="button" style="color:white;"><b>Komunitas Jual Beli Parts Komputer</b></a>
+						</div>
+					</div>
+		</div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Followed Posts
+          <form class="navbar-form navbar-right" action="#">
+            <div class="input-group stylish-input-group">
+                <input type="text" class="form-control"  placeholder="Search" >
+                <span class="input-group-addon">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+        <div class=panel-body>
+          <div  ng-repeat="post in posts" ng-include="'template/post-list.html'"></div>
+  				<div class="btn btn-primary center-block">More...</div>
+  			</div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading row" style="margin-left: 0px; margin-right: 0px;">
+			<div class="col-xs-6 ">
+			<i class="glyphicon glyphicon-user " style="color: lime;"></i>
+			Online friends
+			</div>
+			<div class="col-xs-6" style="text-align: right;">
+			<a href="" role="button" style="color:white;"><b>All friends ></b></a>
+			</div>
+		</div>
+		<div class="panel-body" style ="font-weight: bold;">
+			<div class="col-xs-4 ">
+				Steven Halley <br>
+				Smitty Werbenjager... <br>
+				Hector Dawson <br>
+			</div>
+			<div class="col-xs-4 ">
+				Michael Clay<br>
+				Lillian Figueroa<br>
+				Alberta George<br>
+			</div>
+			<div class="col-xs-4 ">
+				Sophie Harmon
+			</div>
+		</div>
+	</div>
+
+      <div class="panel panel-primary">
+		<div class="panel-heading">
+              Followed Events
+              <form class="navbar-form navbar-right" action="#">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+              </form>
+              <div class=clearfix></div>
+            </div>
+		<div class="panel-body">
+              <a href="#!/group-event">Rakit Komputer Bareng - 10 Juni 2016</a>
+		  <hr style="margin: 0.5em 0em">
+		  <a href="#!/group-event">Showcase - 15 September 2016</a>
+		  <hr style="margin: 0.5em 0em">
+		  <a href="#!/group-event">Showcase - 14 Juni 2016</a>
+		  <hr style="margin: 0.5em 0em">
+              <div class="btn btn-primary center-block">More...</div>
+            </div>
+        
+    </div>
+
+  </div>
+</div>
+</div>

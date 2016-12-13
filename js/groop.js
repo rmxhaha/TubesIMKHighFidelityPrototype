@@ -1,12 +1,13 @@
 var groop = angular.module('groop-app', ['ngRoute','luegg.directives']);
 
 groop.run(function($rootScope) {
-    $rootScope.user_admin = 1;
+    $rootScope.user_admin = 0;
     $rootScope.user_have_joined = 1;
 });
 
 groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
   $scope.logout = function(){
+	  $rootScope.user_admin = 0;
     $scope.logged_in = false;
   }
   $scope.logged_in = false;
@@ -117,10 +118,37 @@ groop.controller('user-register',function($scope,$rootScope){
 });
 groop.controller('user-login',function($scope,$rootScope){
   $scope.login = function(){
+	$rootScope.user_admin = 1;
     $rootScope.$broadcast("user_login");
   }
 });
 groop.controller('user-home',function($scope){
+	$scope.posts = [
+    {
+      upvote : 42,
+      poster_img : 'img/pepe.jpg',
+      title : 'Discussion : Rakit Komputer 2jt',
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+      comment_count : 30,
+      post_url : '#!/group-discussion'
+    },
+    {
+      upvote : 150,
+      poster_img : 'img/kitten.gif',
+      title : 'Discussion : Hibah Komputer',
+      content : 'Lorem ipsum auctor tempor a nec felis, consectetur adipiscing elit. In id nisi id.',
+      comment_count : 30,
+      post_url : '#!/group-discussion'
+    },
+    {
+      upvote : 24,
+      poster_img : 'img/kitten.gif',
+      title : 'Discussion : 2x GTX 1080',
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi id ipsum auctor tempor a nec felis.',
+      comment_count : 5,
+      post_url : '#!/group-discussion'
+    },
+  ];
 });
 
 groop.controller('messages',function($scope){

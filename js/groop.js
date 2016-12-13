@@ -102,7 +102,23 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/messages.html',
              controller  : 'messages'
          })
+         .when('/add-event', {
+             templateUrl : 'pages/add-event.html',
+             controller  : 'add-event'
+         })
  });
+ 
+groop.controller("add-event",["$scope","$rootScope",function($scope,$rootScope){
+  $rootScope.$broadcast('group_view','Add Event');
+  $scope.user_admin = $rootScope.user_admin;
+  $scope.user_have_joined =  $rootScope.user_have_joined;
+  $rootScope.$on( "$routeChangeStart", function(){
+    $scope.user_admin = $rootScope.user_admin;
+    $scope.user_have_joined =  $rootScope.user_have_joined;
+  });
+  
+}]);
+ 
 groop.controller('main-search',['$scope', function($scope) {
   $scope.type = "namakomunitas";
 }]);

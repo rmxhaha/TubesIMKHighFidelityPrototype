@@ -207,7 +207,7 @@ groop.config(function($routeProvider) {
              templateUrl : 'pages/group-members-admin.html',
              controller  : 'group-members'
          })
-         .when('/group-create/:groupName', {
+         .when('/group-create', {
              templateUrl : 'pages/group-create.html',
              controller  : 'group-create'
          })
@@ -255,7 +255,7 @@ groop.controller('main-search',['$scope','$location', function($scope,$location)
       $location.path("/search-not-found");
     }
     else {
-      $location.path("/search");      
+      $location.path("/search");
     }
   }
 }]);

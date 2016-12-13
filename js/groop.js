@@ -121,7 +121,7 @@ groop.run(function($rootScope, $templateCache) {
           commenter : "Friska",
           content : "Komposisinya jelek harusnya bla bla bla",
           commenter_url : "#!/user-profile-2",
-          
+
           upvote : -1,
           bookmarked : false,
           replies : [
@@ -155,9 +155,10 @@ groop.run(function($rootScope, $templateCache) {
     ]
 });
 
-groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope){
+groop.controller('nav',['$scope','$rootScope',function($scope, $rootScope,$location){
   $scope.logout = function(){
     $scope.logged_in = false;
+    $location.path("/");
   }
   $scope.logged_in = false;
   $rootScope.$on('user_login', function(user){
